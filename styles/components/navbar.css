@@ -161,7 +161,7 @@
 }
 
 .nav-link-signin:hover {
-    opacity: transparent;
+    color: rgba(0, 0, 0, 0.4);
 }
 
 .nav-cart {
@@ -171,8 +171,8 @@
 }
 
 .cart-icon {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
