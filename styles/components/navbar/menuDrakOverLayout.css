@@ -7,7 +7,8 @@
     background-color: #000000;
     opacity: 0;
     visibility: hidden;
-    z-index: 900;
+    z-index: 2500;
+    /* ปรับให้สูงกว่า Logo และ Content ทั้งหมด */
     transition: opacity 400ms ease-in-out, visibility 400ms;
     pointer-events: none;
 }
@@ -21,6 +22,8 @@ body.editorial-mode .dark-overlay {
 body.editorial-mode .navbar {
     background-color: transparent;
     border-bottom: none;
+    z-index: 3000;
+    /* ดึง Navbar ให้ลอยเหนือ Overlay สีดำ */
 }
 
 body.editorial-mode .nav-link,

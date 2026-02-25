@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/theme.css" />
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/components/navbar.css" />
+    <link rel="stylesheet" href="./styles/components/hero.css" />
 </head>
 
 <body>
@@ -90,9 +91,31 @@
                 </div>
             </div>
         </nav>
-    </header>
 
-    <script type="module" src="./script/script.js"></script>
+        <div class="hero-scroll-container">
+            <div class="hero-logo-fixed" id="heroLogoFixed">
+                <img src="./images/logo_hero.svg" alt="Plaimanas" class="logo-large">
+                <img src="./images/logo_small.svg" alt="Plaimanas" class="logo-small">
+            </div>
+            <div class="video-hero-bg">
+                <video autoplay loop muted playsinline>
+                    <source src="./videos/hero-bg.webm" type="video/webm">
+                </video>
+            </div>
+        </div>
+
+        <section class="hero-content-section" style="background-color: var(--color-white); height: 200vh;">
+            <div style="padding: 100px 20px; text-align: center;">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">CRAFTING THE FUTURE</h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    Discover the intersection of editorial excellence and modern design.
+                    Our focus is on delivering high-fidelity experiences that bridge
+                    the gap between tradition and digital innovation.
+                </p>
+            </div>
+        </section>
+
+        <script type="module" src="./script/script.js"></script>
 </body>
 
 </html>
