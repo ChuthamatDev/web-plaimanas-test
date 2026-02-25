@@ -1,0 +1,193 @@
+.navbar {
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: var(--nav-max-width);
+    height: 100%;
+    padding: 0 var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+/* --- Nav Left: Language Selector --- */
+.language-selector {
+    position: relative;
+    width: 90px;
+    height: 36px;
+}
+
+.lang-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-family: var(--font-family);
+    font-size: var(--nav-font-size);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-black);
+    white-space: nowrap;
+
+    transition: color 300ms ease-in-out;
+}
+
+.lang-label {
+    display: inline-block;
+}
+
+.lang-btn:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.arrow-icon {
+    width: 7px;
+    height: 5px;
+    transition: transform 300ms ease-in-out;
+}
+
+.language-selector:hover .arrow-icon,
+.language-selector.active .arrow-icon {
+    transform: rotate(-180deg);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 90px;
+    background: var(--color-white);
+
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 300ms ease-in-out;
+    z-index: 999;
+}
+
+.language-selector:hover .lang-dropdown,
+.language-selector.active .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.lang-option:hover {
+    background-color: var(--color-white);
+}
+
+/* --- Nav Center: Menu --- */
+.nav-menu {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.nav-link {
+    font-size: var(--nav-font-size);
+    font-weight: var(--nav-font-weight);
+    text-transform: uppercase;
+    letter-spacing: var(--nav-letter-spacing);
+    line-height: 1;
+    color: var(--color-black);
+    transition: var(--transition-smooth);
+    opacity: 0.8;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+/* --- Nav Right: Sign In & Cart --- */
+.nav-link-signin {
+    font-size: var(--nav-font-size);
+    font-weight: var(--nav-font-weight);
+    text-transform: uppercase;
+    letter-spacing: var(--nav-letter-spacing);
+    line-height: 1;
+    color: var(--color-black);
+    transition: var(--transition-smooth);
+}
+
+.nav-link-signin:hover {
+    opacity: transparent;
+}
+
+.nav-cart {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.cart-icon {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    opacity: 0.4;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        /* ค่อยทำ Hamburger Menu ในภายหลัง */
+    }
+}

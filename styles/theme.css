@@ -1,0 +1,53 @@
+:root {
+    /* Color Palette */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-100: #F5F5F5;
+    --color-gray-900: #1A1A1A;
+
+    /* Functional Colors */
+    --bg-primary: var(--color-white);
+    --text-primary: var(--color-black);
+    --text-secondary: var(--color-gray-900);
+
+    /* Typography Scale (Minor Third Scale - 1.2) */
+    --font-family: 'Hanken Grotesk', sans-serif;
+    --font-size-base: 16px;
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.25rem;
+    /* 20px */
+    --text-xl: 1.5rem;
+    /* 24px */
+    --text-2xl: 2rem;
+    /* 32px */
+    --text-3xl: 3rem;
+    /* 48px */
+    --text-hero: 5rem;
+    /* 80px - สำหรับหน้า Desktop Hero */
+
+    /* Spacing System */
+    --space-unit: 8px;
+    --space-xs: calc(var(--space-unit) * 1);
+    /* 8px */
+    --space-sm: calc(var(--space-unit) * 2);
+    /* 16px */
+    --space-md: calc(var(--space-unit) * 4);
+    /* 32px */
+    --space-lg: calc(var(--space-unit) * 8);
+    /* 64px */
+
+    /* Animation */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Navbar Specific */
+    --nav-height: 45px;
+    --nav-font-size: 13px;
+    --nav-font-weight: 400;
+    --nav-letter-spacing: 0em;
+    --nav-max-width: 1440px;
+}
