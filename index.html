@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <div class="dark-overlay"></div>
+
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -41,7 +43,17 @@
                         <li>
                             <a href="#" class="nav-link">Collections</a>
                         </li>
-                        <li><a href="#" class="nav-link">Editorial</a></li>
+                        <li class="menu-item has-dropdown" data-menu="editorial">
+                            <a href="#" class="nav-link">Editorial</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-list">
+                                    <li><a href="#" class="dropdown-item">A.S.C</a></li>
+                                    <li><a href="#" class="dropdown-item">BAZAAR</a></li>
+                                    <li><a href="#" class="dropdown-item">ELLE</a></li>
+                                    <li><a href="#" class="dropdown-item">GQ</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="#" class="nav-link">News</a></li>
                         <li><a href="#" class="nav-link">Stories</a></li>
                     </ul>

@@ -1,0 +1,50 @@
+.navbar {
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--color-white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: var(--nav-max-width);
+    height: 100%;
+    padding: 0 var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Mobile Responsive: ปิดไว้ก่อนจนกว่าจะมี Hamburger Menu */
+/* @media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+} */

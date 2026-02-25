@@ -1,0 +1,33 @@
+.nav-link-signin {
+    font-size: var(--nav-font-size);
+    font-weight: var(--nav-font-weight);
+    text-transform: uppercase;
+    letter-spacing: var(--nav-letter-spacing);
+    line-height: 1;
+    color: var(--color-black);
+    transition: var(--transition-smooth);
+}
+
+.nav-link-signin:hover {
+    opacity: 0.4;
+}
+
+.nav-cart {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.cart-icon {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    opacity: 0.4;
+}
