@@ -41,10 +41,3 @@
     justify-content: flex-end;
     align-items: center;
 }
-
-/* Mobile Responsive: ปิดไว้ก่อนจนกว่าจะมี Hamburger Menu */
-/* @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-} */
