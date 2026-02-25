@@ -12,27 +12,38 @@
 .nav-link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 36px;
     width: auto;
 
-    font-size: var(--nav-font-size);
-    font-weight: var(--nav-font-weight);
+    font-size: var(--text-sm);
+    font-weight: var(--font-regular);
     text-transform: uppercase;
     color: var(--color-black);
     text-decoration: none;
     white-space: nowrap;
+    gap: 5px;
 
     opacity: 1;
     visibility: visible;
 
-    transform-origin: center center;
+    transform-origin: left center;
     transition: all 300ms ease-in-out;
     will-change: transform;
     backface-visibility: hidden;
 }
 
-.nav-link:hover {
-    transform: scale(1.15);
+.nav-link:hover,
+.has-dropdown.active .nav-link {
+    transform: scale(1.25);
     font-weight: 700;
+}
+
+.mobile-chevron {
+    display: none;
+}
+
+.has-dropdown:hover .mobile-chevron,
+.has-dropdown.active .mobile-chevron {
+    transform: rotate(-180deg);
 }

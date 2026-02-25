@@ -38,22 +38,37 @@
                 </div>
 
                 <div class="nav-center">
+                    <button class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                        <img src="./images/menu_mobile.svg" alt="Menu Icon" class="icon-hamburger">
+                        <img src="./images/close_icon_mobile.svg" alt="Close Icon" class="icon-close">
+                    </button>
+
                     <ul class="nav-menu">
                         <li><a href="#" class="nav-link">Women</a></li>
                         <li>
                             <a href="#" class="nav-link">Collections</a>
                         </li>
+
                         <li class="menu-item has-dropdown" data-menu="editorial">
-                            <a href="#" class="nav-link">Editorial</a>
+                            <a href="#" class="nav-link editorial-toggle">
+                                EDITORIAL
+                                <svg class="mobile-chevron" viewBox="0 0 6 4" fill="currentColor">
+                                    <path d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z" />
+                                </svg>
+                            </a>
                             <div class="dropdown-content">
                                 <ul class="dropdown-list">
                                     <li><a href="#" class="dropdown-item">A.S.C</a></li>
                                     <li><a href="#" class="dropdown-item">BAZAAR</a></li>
                                     <li><a href="#" class="dropdown-item">ELLE</a></li>
                                     <li><a href="#" class="dropdown-item">GQ</a></li>
+                                    <li><a href="#" class="dropdown-item">L'OFFICIEL THAILAND</a></li>
+                                    <li><a href="#" class="dropdown-item">NUMERO</a></li>
+                                    <li><a href="#" class="dropdown-item">VOGUE</a></li>
                                 </ul>
                             </div>
                         </li>
+
                         <li><a href="#" class="nav-link">News</a></li>
                         <li><a href="#" class="nav-link">Stories</a></li>
                     </ul>
@@ -77,7 +92,7 @@
         </nav>
     </header>
 
-    <script type="module" src="./script/ui-controller.js"></script>
+    <script type="module" src="./script/script.js"></script>
 </body>
 
 </html>
