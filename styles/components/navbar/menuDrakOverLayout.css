@@ -8,7 +8,6 @@
     opacity: 0;
     visibility: hidden;
     z-index: 2500;
-    /* ปรับให้สูงกว่า Logo และ Content ทั้งหมด */
     transition: opacity 400ms ease-in-out, visibility 400ms;
     pointer-events: none;
 }

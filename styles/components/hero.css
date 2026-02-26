@@ -1,97 +1,119 @@
 .hero-scroll-container {
-    height: 180vh;
     position: relative;
+    height: 200vh;
     background-color: var(--color-black);
 }
 
-.hero-logo-fixed {
-    position: fixed;
-    top: calc(var(--nav-height) + 20px);
-    /* เว้นระยะห่างจากขอบล่างของ Navbar 20px */
-    left: 50%;
-    transform: translateX(-50%) scale(1);
-    transform-origin: top center;
-    /* ย่อจากขอบบนลงมา เพื่อให้รักษาระยะห่าง 20px ไว้ตลอด */
-    width: 1400px;
-    padding: 0 20px;
-    height: 215px;
-    z-index: 2000;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1),
-        opacity 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+.sticky-hero-view {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-
-.hero-logo-fixed.shrunk {
-    margin: 0;
-    transform: translateX(-50%) scale(0.18);
-    /* ย่อขนาดลงแต่ยังคงตำแหน่ง Top เดิม */
-}
-
-.hero-logo-fixed img {
+.hero-video,
+.video-overlay {
     position: absolute;
+    inset: 0;
+}
+
+.hero-video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.hero-logo-wrapper {
+    --hero-logo-scale: 1;
+    position: absolute;
+    top: calc(var(--nav-height) + 20px);
+    left: 50%;
+    width: min(96vw, 1400px);
+    transform: translateX(-50%) scale(var(--hero-logo-scale));
+    transform-origin: top center;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 600ms linear;
+    will-change: transform;
+}
+
+.hero-logo-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
     filter: brightness(0) invert(1);
-    will-change: opacity;
-    transition: opacity 0.8s ease;
+}
+
+.logo-large,
+.logo-small {
+    transition: opacity 600ms linear;
+}
+
+.logo-large {
+    opacity: 1;
 }
 
 .logo-small {
+    position: absolute;
+    inset: 0;
     opacity: 0;
 }
 
-.hero-logo-fixed.shrunk .logo-large {
+.hero-logo-wrapper.is-compact .logo-large {
     opacity: 0;
 }
 
-.hero-logo-fixed.shrunk .logo-small {
+.hero-logo-wrapper.is-compact .logo-small {
     opacity: 1;
 }
 
 .hero-content-section {
     position: relative;
-    z-index: 10;
+    z-index: 20;
+    min-height: 200vh;
     background-color: var(--color-white);
-    min-height: 100vh;
 }
 
-/* --- Video Background Styles --- */
-.video-hero-bg {
-    position: absolute;
-    /* เปลี่ยนเป็น absolute ภายใต้ hero-scroll-container */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* ให้เต็มพื้นที่ hero-scroll-container */
-    z-index: 0;
-    /* อยู่หน้าพื้นหลังสีดำ แต่หลัง Logo */
-    overflow: hidden;
+.hero-content-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
 }
 
-.video-hero-bg video {
-    position: sticky;
-    /* ให้วิดีโอค้างตามหน้าจอขณะ Scroll ในส่วนของ Hero */
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+.hero-content-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
 }
 
-/* Overlay เพื่อให้ Logo X-ray ทำงานได้สวยขึ้น */
-.video-hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.hero-content-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .hero-logo-wrapper {
+        top: calc(var(--nav-height) + 12px);
+        width: min(95vw, 900px);
+    }
+
+    .hero-content-section {
+        min-height: 140vh;
+    }
+
+    .hero-content-title {
+        font-size: 2rem;
+    }
+
+    .hero-content-description {
+        font-size: 1rem;
+    }
 }

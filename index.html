@@ -1,121 +1,197 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plaimanas</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plaimanas</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+        <link rel="stylesheet" href="./styles/theme.css" />
+        <link rel="stylesheet" href="./styles/base.css" />
+        <link rel="stylesheet" href="./styles/navbar.css" />
+        <link rel="stylesheet" href="./styles/components/hero.css" />
+    </head>
 
-    <link rel="stylesheet" href="./styles/theme.css" />
-    <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/components/navbar.css" />
-    <link rel="stylesheet" href="./styles/components/hero.css" />
-</head>
+    <body>
+        <div class="dark-overlay"></div>
 
-<body>
-    <div class="dark-overlay"></div>
+        <header>
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="nav-left">
+                        <div class="language-selector" id="languageSelector">
+                            <button class="lang-btn">
+                                <span class="lang-label">TH - THB</span>
+                                <svg
+                                    class="arrow-icon"
+                                    viewBox="0 0 7 4"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z"
+                                    />
+                                </svg>
+                            </button>
 
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-left">
-                    <div class="language-selector" id="languageSelector">
-                        <button class="lang-btn">
-                            <span class="lang-label">TH - THB</span>
-                            <svg class="arrow-icon" viewBox="0 0 7 4" fill="currentColor">
-                                <path d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z" />
-                            </svg>
+                            <div class="lang-dropdown">
+                                <button class="lang-option">US - USD</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-center">
+                        <button
+                            class="mobile-menu-btn"
+                            aria-label="Toggle Mobile Menu"
+                        >
+                            <img
+                                src="./images/menu_mobile.svg"
+                                alt="Menu Icon"
+                                class="icon-hamburger"
+                            />
+                            <img
+                                src="./images/close_icon_mobile.svg"
+                                alt="Close Icon"
+                                class="icon-close"
+                            />
                         </button>
 
-                        <div class="lang-dropdown">
-                            <button class="lang-option">US - USD</button>
+                        <ul class="nav-menu">
+                            <li><a href="#" class="nav-link">Women</a></li>
+                            <li>
+                                <a href="#" class="nav-link">Collections</a>
+                            </li>
+
+                            <li
+                                class="menu-item has-dropdown"
+                                data-menu="editorial"
+                            >
+                                <a href="#" class="nav-link editorial-toggle">
+                                    EDITORIAL
+                                    <svg
+                                        class="mobile-chevron"
+                                        viewBox="0 0 6 4"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z"
+                                        />
+                                    </svg>
+                                </a>
+                                <div class="dropdown-content">
+                                    <ul class="dropdown-list">
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >A.S.C</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >BAZAAR</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >ELLE</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >GQ</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >L'OFFICIEL THAILAND</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >NUMERO</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >VOGUE</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a href="#" class="nav-link">News</a></li>
+                            <li><a href="#" class="nav-link">Stories</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-right">
+                        <a href="#" class="nav-link-signin">Sign In</a>
+                    </div>
+
+                    <div class="nav-cart">
+                        <div class="cart-icon">
+                            <svg
+                                width="17"
+                                height="17"
+                                viewBox="0 0 17 17"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M11.3333 7.08333V4.25C11.3333 3.49855 11.0348 2.77788 10.5035 2.24653C9.97212 1.71518 9.25145 1.41667 8.5 1.41667C7.74855 1.41667 7.02788 1.71518 6.49653 2.24653C5.96518 2.77788 5.66667 3.49855 5.66667 4.25V7.08333M2.125 4.95833V12.75C2.125 13.5014 2.42351 14.2221 2.95486 14.7535C3.48622 15.2848 4.20689 15.5833 4.95833 15.5833H12.0417C12.7931 15.5833 13.5138 15.2848 14.0451 14.7535C14.5765 14.2221 14.875 13.5014 14.875 12.75V4.95833H2.125Z"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>
+            </nav>
 
-                <div class="nav-center">
-                    <button class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
-                        <img src="./images/menu_mobile.svg" alt="Menu Icon" class="icon-hamburger">
-                        <img src="./images/close_icon_mobile.svg" alt="Close Icon" class="icon-close">
-                    </button>
-
-                    <ul class="nav-menu">
-                        <li><a href="#" class="nav-link">Women</a></li>
-                        <li>
-                            <a href="#" class="nav-link">Collections</a>
-                        </li>
-
-                        <li class="menu-item has-dropdown" data-menu="editorial">
-                            <a href="#" class="nav-link editorial-toggle">
-                                EDITORIAL
-                                <svg class="mobile-chevron" viewBox="0 0 6 4" fill="currentColor">
-                                    <path d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z" />
-                                </svg>
-                            </a>
-                            <div class="dropdown-content">
-                                <ul class="dropdown-list">
-                                    <li><a href="#" class="dropdown-item">A.S.C</a></li>
-                                    <li><a href="#" class="dropdown-item">BAZAAR</a></li>
-                                    <li><a href="#" class="dropdown-item">ELLE</a></li>
-                                    <li><a href="#" class="dropdown-item">GQ</a></li>
-                                    <li><a href="#" class="dropdown-item">L'OFFICIEL THAILAND</a></li>
-                                    <li><a href="#" class="dropdown-item">NUMERO</a></li>
-                                    <li><a href="#" class="dropdown-item">VOGUE</a></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li><a href="#" class="nav-link">News</a></li>
-                        <li><a href="#" class="nav-link">Stories</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-right">
-                    <a href="#" class="nav-link-signin">Sign In</a>
-                </div>
-
-                <div class="nav-cart">
-                    <div class="cart-icon">
-                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M11.3333 7.08333V4.25C11.3333 3.49855 11.0348 2.77788 10.5035 2.24653C9.97212 1.71518 9.25145 1.41667 8.5 1.41667C7.74855 1.41667 7.02788 1.71518 6.49653 2.24653C5.96518 2.77788 5.66667 3.49855 5.66667 4.25V7.08333M2.125 4.95833V12.75C2.125 13.5014 2.42351 14.2221 2.95486 14.7535C3.48622 15.2848 4.20689 15.5833 4.95833 15.5833H12.0417C12.7931 15.5833 13.5138 15.2848 14.0451 14.7535C14.5765 14.2221 14.875 13.5014 14.875 12.75V4.95833H2.125Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
+            <div class="hero-scroll-container">
+                <div class="sticky-hero-view">
+                    <video autoplay loop muted playsinline class="hero-video">
+                        <source src="./videos/hero-bg.webm" type="video/webm" />
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="hero-logo-wrapper" id="heroLogoWrapper">
+                        <img
+                            src="./images/logo_hero.svg"
+                            alt="Plaimanas"
+                            class="logo-large"
+                        />
+                        <img
+                            src="./images/logo_small.svg"
+                            alt="Plaimanas"
+                            class="logo-small"
+                        />
                     </div>
                 </div>
             </div>
-        </nav>
+        </header>
 
-        <div class="hero-scroll-container">
-            <div class="hero-logo-fixed" id="heroLogoFixed">
-                <img src="./images/logo_hero.svg" alt="Plaimanas" class="logo-large">
-                <img src="./images/logo_small.svg" alt="Plaimanas" class="logo-small">
-            </div>
-            <div class="video-hero-bg">
-                <video autoplay loop muted playsinline>
-                    <source src="./videos/hero-bg.webm" type="video/webm">
-                </video>
-            </div>
-        </div>
-
-        <section class="hero-content-section" style="background-color: var(--color-white); height: 200vh;">
-            <div style="padding: 100px 20px; text-align: center;">
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;">CRAFTING THE FUTURE</h2>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                    Discover the intersection of editorial excellence and modern design.
-                    Our focus is on delivering high-fidelity experiences that bridge
-                    the gap between tradition and digital innovation.
-                </p>
-            </div>
-        </section>
+        <main>
+            <section class="hero-content-section">
+                <div class="hero-content-inner">
+                    <h2 class="hero-content-title">CRAFTING THE FUTURE</h2>
+                    <p class="hero-content-description">
+                        Discover the intersection of editorial excellence and
+                        modern design. Our focus is on delivering high-fidelity
+                        experiences that bridge the gap between tradition and
+                        digital innovation.
+                    </p>
+                </div>
+            </section>
+        </main>
 
         <script type="module" src="./script/script.js"></script>
-</body>
-
+    </body>
 </html>
