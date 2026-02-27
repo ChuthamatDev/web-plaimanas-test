@@ -5,11 +5,13 @@ export const initHeroAnimation = () => {
     const updateLogo = () => {
         if (window.scrollY > 50) {
             logoWrapper.classList.add('is-compact')
-        } else {
-            logoWrapper.classList.remove('is-compact')
+            window.removeEventListener('scroll', updateLogo)
         }
     }
 
     updateLogo()
-    window.addEventListener('scroll', updateLogo)
+
+    if (!logoWrapper.classList.contains('is-compact')) {
+        window.addEventListener('scroll', updateLogo)
+    }
 }

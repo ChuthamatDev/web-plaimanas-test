@@ -1,14 +1,17 @@
 .hero-scroll-container {
     position: relative;
-    height: 200vh;
     background-color: var(--color-black);
+    padding-top: var(--nav-height);
+    height: calc(200vh - var(--nav-height));
 }
 
 .sticky-hero-view {
     position: sticky;
-    top: 0;
+    top: var(--nav-height);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
+    margin: 0 auto;
+    background-color: var(--color-black);
     overflow: hidden;
 }
 
@@ -22,11 +25,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-
-    /* 💡 THE HACK: ดึง Video กลับมาให้ Blend Mode มองเห็น */
     opacity: 0.99;
     transform: translateZ(0);
+}
+
+@media (min-width: 1024px) {
+    .hero-video {
+        object-position: center 22%;
+    }
 }
 
 .video-overlay {
@@ -55,7 +63,7 @@
 }
 
 .hero-logo-wrapper.is-compact .hero-logo-inner {
-    transform: scale(0.21);
+    transform: scale(0.18);
 }
 
 .hero-logo-wrapper img {
