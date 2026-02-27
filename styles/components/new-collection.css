@@ -1,62 +1,76 @@
 .new-collection-section {
     position: relative;
-    z-index: 20;
     background-color: var(--bg-primary);
-    padding: 100px 20px;
+    padding: 100px 0;
 }
 
 .new-collection-container {
-    max-width: 700px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-md);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .new-collection-header {
     display: grid;
-    place-items: center;
-    position: relative;
-    margin-bottom: var(--space-sm);
+    width: 100%;
+    margin-bottom: 0;
 }
 
 .new-collection-header>* {
     grid-area: 1 / 1;
 }
 
-.new-collection-header h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--color-white);
-    font-size: 80px;
-    text-transform: uppercase;
-    z-index: 10;
-    margin: 0;
-    pointer-events: none;
-    line-height: 1;
-    white-space: nowrap;
+.new-collection-image {
+    width: 100%;
+    max-width: 566px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
 }
 
-.new-collection-image {
-    width: 566px;
-    height: 572px;
-    
+.new-collection-title-wrapper {
+    align-self: end;
+    height: 50%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.new-collection-title-wrapper h1 {
+    position: sticky;
+    top: calc(50vh - 0.4em);
+    line-height: 1.0;
+    margin-top: -0.5em;
+    margin-bottom: 0;
+
+    text-align: center;
+    color: var(--color-white);
+    font-size: 80px;
+    font-family: var(--font-family);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .new-collection-details {
     margin-top: var(--space-md);
-    width: 715px;
-    height: 64px;
+    max-width: 715px;
+    width: 100%;
     text-align: center;
+    padding: 0 20px;
 }
 
 .new-collection-details h4 {
     text-transform: none;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
     margin-bottom: var(--space-sm);
-    color: var(--text-primary);
+    color: var(--color-black);
 }
 
 .new-collection-details p {
@@ -64,16 +78,17 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.4;
-    color: var(--text-secondary);
+    font-weight: 400;
+    color: var(--color-black);
 }
 
+/* --- Responsive มือถือ --- */
 @media (max-width: 768px) {
     .new-collection-section {
-        padding: var(--space-md) 0;
-        min-height: 140vh;
+        padding: 50px 0;
     }
 
-    .new-collection-header h1 {
-        font-size: var(--text-2xl);
+    .new-collection-title-wrapper h1 {
+        margin-bottom: -8vw;
     }
 }

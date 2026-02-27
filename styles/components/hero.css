@@ -45,7 +45,7 @@
 }
 
 .hero-logo-wrapper.is-compact {
-    transform: translateX(-50%) scale(0.18);
+    transform: translateX(-50%) scale(0.21);
 }
 
 .hero-logo-wrapper img {
@@ -68,6 +68,7 @@
     position: absolute;
     inset: 0;
     opacity: 0;
+    mix-blend-mode: difference;
 }
 
 .hero-logo-wrapper.is-compact .logo-large {

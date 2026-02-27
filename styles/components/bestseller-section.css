@@ -1,13 +1,12 @@
 .bestseller-section {
     position: relative;
-    z-index: 20;
     background-color: var(--color-white);
-    padding: 100px 20px;
+    padding: 0;
 }
 
 .bestseller-container {
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,25 +14,43 @@
 
 .bestseller-header {
     display: grid;
-    place-items: center;
     width: 100%;
-    position: relative;
     margin-bottom: var(--space-md);
-} 
+}
 
-.bestseller-header >* {
-    grid-area: 1/1;
+.bestseller-header>* {
+    grid-area: 1 / 1;
 }
 
 .bestseller-video {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.bestseller-header h1 {
+
+.bestseller-title-wrapper {
+    align-self: end;
+    height: 50%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.bestseller-title-wrapper h1 {
+    position: sticky;
+    top: calc(50vh - 0.4em);
+    /* ระยะล็อคบนหน้าจอ */
+
+    line-height: 0.8;
+
+    /* 💡 THE FIX: ดึงตัวอักษรขึ้นไปครึ่งนึง (0.4em) เพื่อให้อยู่กึ่งกลางรูปภาพเป๊ะๆ */
+    margin-top: -0.4em;
+    margin-bottom: 0;
+    
+    text-align: center;
     color: var(--color-white);
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: 80px;
     font-family: var(--font-family);
     font-weight: 900;
     text-transform: uppercase;
@@ -45,17 +62,19 @@
 
 .bestseller-details {
     margin-top: var(--space-sm);
-    width: 715px;
-    height: 64px;
+    max-width: 715px;
+    width: 100%;
     text-align: center;
+    padding: 0 20px;
 }
 
 .bestseller-details h4 {
     text-transform: none;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
     margin-bottom: var(--space-sm);
-    color: var(--text-primary);
+    color: var(--color-black);
 }
 
 .bestseller-details p {
@@ -63,5 +82,6 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.4;
-    color: var(--text-secondary);
+    font-weight: 400;
+    color: var(--color-black);
 }

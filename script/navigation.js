@@ -11,23 +11,19 @@ export const initNavigation = () => {
 
     const isMobile = () => window.innerWidth <= 768
 
-    // --- 1. Mobile Logic: Hamburger Menu Toggle ---
     mobileBtn.addEventListener('click', (e) => {
         e.stopPropagation()
         const isOpen = navCenter.classList.toggle('open')
 
-        // ล็อค Scroll ของ Body เมื่อเปิดเมนู
         document.body.style.overflow = isOpen ? 'hidden' : ''
     })
 
-    // --- 2. Mobile Logic: Editorial Sub-menu Toggle ---
     if (editorialLink) {
         editorialLink.addEventListener('click', (e) => {
             if (isMobile()) {
                 e.preventDefault()
                 editorialMenu.classList.toggle('mobile-expanded')
 
-                // หมุนลูกศร Chevron
                 if (chevron) {
                     const isExpanded =
                         editorialMenu.classList.contains('mobile-expanded')
@@ -39,7 +35,6 @@ export const initNavigation = () => {
         })
     }
 
-    // --- 3. Desktop Logic: Editorial Hover (Immersive Focus) ---
     const allNavLinks = document.querySelectorAll(
         '.nav-menu > li:not([data-menu="editorial"]) .nav-link'
     )
@@ -60,20 +55,16 @@ export const initNavigation = () => {
         }, 150)
     }
 
-    // เปิด Focus เมื่อนำเมาส์เข้าพื้นที่ Editorial (รวม Dropdown)
     editorialMenu.addEventListener('mouseenter', showDesktopMenu)
 
-    // ปิด Focus เมื่อ "ขยับไปที่เมนูหลักอื่นๆ" ตามโจทย์
     allNavLinks.forEach((link) => {
         link.addEventListener('mouseenter', hideDesktopMenu)
     })
 
-    // ปิด Focus เมื่อเอาเมาส์ออกจากแถบ Header ทั้งหมด
     if (navBar) {
         navBar.addEventListener('mouseleave', hideDesktopMenu)
     }
 
-    // --- 4. Cleanup on Window Resize ---
     window.addEventListener('resize', () => {
         if (!isMobile()) {
             navCenter.classList.remove('open')
@@ -86,7 +77,6 @@ export const initNavigation = () => {
         }
     })
 
-    // --- 5. Language Selector Logic ---
     const langBtn = document.querySelector('.lang-btn')
     const langSelector = document.querySelector('#languageSelector')
     if (langBtn && langSelector) {
