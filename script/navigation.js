@@ -76,16 +76,4 @@ export const initNavigation = () => {
             document.body.classList.remove('editorial-mode')
         }
     })
-
-    const langBtn = document.querySelector('.lang-btn')
-    const langSelector = document.querySelector('#languageSelector')
-    if (langBtn && langSelector) {
-        langBtn.addEventListener('click', (e) => {
-            e.stopPropagation()
-            langSelector.classList.toggle('active')
-        })
-        document.addEventListener('click', () =>
-            langSelector.classList.remove('active')
-        )
-    }
 }

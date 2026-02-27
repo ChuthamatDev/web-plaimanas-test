@@ -2,6 +2,12 @@ export const initLanguageSelector = () => {
     const selector = document.querySelector('#languageSelector')
     const btn = selector.querySelector('.lang-btn')
 
+    if (!selector || !btn) return
+
+    // ฟังก์ชันเช็คว่าเป็น Mobile หรือไม่
+    const isMobile = () => window.innerWidth <= 768
+
+    // 1. ระบบ Click (สำหรับ Mobile หรือคลิกบน Desktop)
     btn.addEventListener('click', (e) => {
         e.stopPropagation()
         selector.classList.toggle('active')
@@ -9,14 +15,34 @@ export const initLanguageSelector = () => {
         btn.setAttribute('aria-expanded', isExpanded)
     })
 
+    // 2. 💡 THE FIX: เพิ่มระบบ Hover (mouseenter / mouseleave) สำหรับ Desktop
+    selector.addEventListener('mouseenter', () => {
+        if (!isMobile()) {
+            selector.classList.add('active')
+            btn.setAttribute('aria-expanded', 'true')
+        }
+    })
+
+    selector.addEventListener('mouseleave', () => {
+        if (!isMobile()) {
+            selector.classList.remove('active')
+            btn.setAttribute('aria-expanded', 'false')
+        }
+    })
+
+    // 3. ปิดเมนูเมื่อคลิกที่อื่นบนหน้าจอ
     document.addEventListener('click', () => {
         selector.classList.remove('active')
         btn.setAttribute('aria-expanded', 'false')
     })
 
-    selector.querySelector('.lang-dropdown').addEventListener('click', (e) => {
-        e.stopPropagation()
-    })
+    // 4. ป้องกันเมนูปิดเวลาคลิกข้างใน Dropdown
+    const dropdown = selector.querySelector('.lang-dropdown')
+    if (dropdown) {
+        dropdown.addEventListener('click', (e) => {
+            e.stopPropagation()
+        })
+    }
 }
 
 export const initEditorialDropdown = () => {
