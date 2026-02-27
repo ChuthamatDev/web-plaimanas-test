@@ -26,6 +26,8 @@
             rel="stylesheet"
             href="./styles/components/collections-section.css"
         />
+        <link rel="stylesheet" href="./styles/components/faq.css" />
+
         <link rel="stylesheet" href="./styles/components/features.css" />
         <link rel="stylesheet" href="./styles/components/marquee.css" />
         <link rel="stylesheet" href="./styles/components/section-content.css" />
@@ -450,6 +452,269 @@
                                 molestie quam justo ut lacus. Proin vitae
                             </p>
                         </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section" aria-labelledby="faq-title">
+                <div class="faq-container">
+                    <header class="faq-header">
+                        <h2 id="faq-title" class="faq-title">
+                            FREQUENTLY ASKED QUESTIONS
+                        </h2>
+                        <p class="faq-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Nam ornare, nisl non rhoncus commodo.
+                        </p>
+                    </header>
+
+                    <div class="faq-tabs" role="tablist">
+                        <button
+                            class="faq-tab"
+                            role="tab"
+                            aria-selected="false"
+                            data-target="roders"
+                        >
+                            Orders
+                        </button>
+                        <button
+                            class="faq-tab"
+                            role="tab"
+                            aria-selected="false"
+                            data-target="shipping"
+                        >
+                            shipping
+                        </button>
+                        <button
+                            class="faq-tab active"
+                            role="tab"
+                            aria-selected="ture"
+                            data-target="returns"
+                        >
+                            Returns & Exchanges
+                        </button>
+                        <button
+                            class="faq-tab"
+                            role="tab"
+                            aria-selected="false"
+                            data-target="sizing"
+                        >
+                            Sizing & Products
+                        </button>
+                    </div>
+
+                    <div class="faq-content-wrapper">
+                        <div class="faq-group" id="shipping" role="tabpanel">
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span
+                                        >Do you offer international
+                                        shipping?</span
+                                    >
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Items can be returned within 14 days
+                                            of receipt, provided they are
+                                            unworn, unwashed, and in original
+                                            condition with tags attached.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span>How long dose delivery take?</span>
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Standard shipping takes 3-5 business
+                                            days. Express shipping is available
+                                            at checkout for 1-2 business days
+                                            delivery.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span>How can I track my order?</span>
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Once your order is dispatched, you
+                                            will receive an email containing
+                                            your tracking number and a link to
+                                            track your package.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-group active"
+                            id="returns"
+                            role="tabpanel"
+                        >
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span>What is your return policy?</span>
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Items can be returned within 14 days
+                                            of receipt, provided they are
+                                            unworn, unwashed, and in original
+                                            condition with tags attached.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span
+                                        >Can I exchange for a different
+                                        size?</span
+                                    >
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Standard shipping takes 3-5 business
+                                            days. Express shipping is available
+                                            at checkout for 1-2 business days
+                                            delivery.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="faq-accordion">
+                                <button
+                                    class="faq-question"
+                                    aria-expanded="false"
+                                >
+                                    <span>Are sale items refundable?</span>
+                                    <svg
+                                        class="faq-chevron"
+                                        viewBox="0 0 14 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1 1L7 7L13 1"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Once your order is dispatched, you
+                                            will receive an email containing
+                                            your tracking number and a link to
+                                            track your package.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
