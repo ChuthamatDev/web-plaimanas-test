@@ -5,7 +5,9 @@
     letter-spacing: var(--nav-letter-spacing);
     line-height: 1;
     color: var(--color-black);
+
     transition: var(--transition-smooth);
+    will-change: opacity;
 }
 
 .nav-link-signin:hover {
@@ -24,8 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition-smooth);
     cursor: pointer;
+
+    transition: var(--transition-smooth);
+    will-change: opacity;
 }
 
 .cart-icon:hover {
