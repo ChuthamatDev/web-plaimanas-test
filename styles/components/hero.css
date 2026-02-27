@@ -22,7 +22,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    display: block;
+
+    /* 💡 THE HACK: ดึง Video กลับมาให้ Blend Mode มองเห็น */
+    opacity: 0.99;
+    transform: translateZ(0);
 }
 
 .video-overlay {
@@ -33,19 +37,25 @@
 .hero-logo-wrapper {
     position: fixed;
     top: calc(var(--nav-height) + 20px);
-    left: 50%;
-    width: min(96vw, 1400px);
-    transform: translateX(-50%) scale(1);
-    transform-origin: top center;
-    z-index: 900;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
     pointer-events: none;
     mix-blend-mode: difference;
+}
+
+.hero-logo-inner {
+    position: relative;
+    width: min(96vw, 1400px);
+    margin: 0 auto;
+    transform: scale(1);
+    transform-origin: top center;
     transition: transform 600ms linear;
     will-change: transform;
 }
 
-.hero-logo-wrapper.is-compact {
-    transform: translateX(-50%) scale(0.21);
+.hero-logo-wrapper.is-compact .hero-logo-inner {
+    transform: scale(0.21);
 }
 
 .hero-logo-wrapper img {
@@ -68,7 +78,6 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    mix-blend-mode: difference;
 }
 
 .hero-logo-wrapper.is-compact .logo-large {
@@ -82,6 +91,9 @@
 @media (max-width: 768px) {
     .hero-logo-wrapper {
         top: calc(var(--nav-height) + 12px);
+    }
+
+    .hero-logo-inner {
         width: min(95vw, 900px);
     }
 }
