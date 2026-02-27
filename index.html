@@ -25,14 +25,20 @@
     </head>
 
     <body>
-        <div class="dark-overlay"></div>
+        <div class="dark-overlay" aria-hidden="true"></div>
 
-        <header>
-            <nav class="navbar">
+        <header class="site-header">
+            <nav class="navbar" aria-label="Primary Navigation">
                 <div class="nav-container">
                     <div class="nav-left">
                         <div class="language-selector" id="languageSelector">
-                            <button class="lang-btn">
+                            <button
+                                type="button"
+                                class="lang-btn"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-controls="languageOptions"
+                            >
                                 <span class="lang-label">TH - THB</span>
                                 <svg
                                     class="arrow-icon"
@@ -45,30 +51,45 @@
                                 </svg>
                             </button>
 
-                            <div class="lang-dropdown">
-                                <button class="lang-option">US - USD</button>
+                            <div
+                                class="lang-dropdown"
+                                id="languageOptions"
+                                role="listbox"
+                            >
+                                <button
+                                    type="button"
+                                    class="lang-option"
+                                    role="option"
+                                >
+                                    US - USD
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="nav-center">
                         <button
+                            type="button"
                             class="mobile-menu-btn"
                             aria-label="Toggle Mobile Menu"
+                            aria-controls="primaryNavigation"
+                            aria-expanded="false"
                         >
                             <img
                                 src="./images/menu_mobile.svg"
-                                alt="Menu Icon"
+                                alt=""
+                                aria-hidden="true"
                                 class="icon-hamburger"
                             />
                             <img
                                 src="./images/close_icon_mobile.svg"
-                                alt="Close Icon"
+                                alt=""
+                                aria-hidden="true"
                                 class="icon-close"
                             />
                         </button>
 
-                        <ul class="nav-menu">
+                        <ul class="nav-menu" id="primaryNavigation">
                             <li><a href="#" class="nav-link">Women</a></li>
                             <li>
                                 <a href="#" class="nav-link">Collections</a>
@@ -78,7 +99,13 @@
                                 class="menu-item has-dropdown"
                                 data-menu="editorial"
                             >
-                                <a href="#" class="nav-link editorial-toggle">
+                                <a
+                                    href="#"
+                                    class="nav-link editorial-toggle"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-controls="editorialDropdown"
+                                >
                                     EDITORIAL
                                     <svg
                                         class="mobile-chevron"
@@ -90,7 +117,10 @@
                                         />
                                     </svg>
                                 </a>
-                                <div class="dropdown-content">
+                                <div
+                                    class="dropdown-content"
+                                    id="editorialDropdown"
+                                >
                                     <ul class="dropdown-list">
                                         <li>
                                             <a href="#" class="dropdown-item"
@@ -162,24 +192,33 @@
                 </div>
             </nav>
 
-            <div class="hero-scroll-container">
+            <section class="hero-scroll-container" aria-label="Hero">
                 <div class="sticky-hero-view">
-                    <video autoplay loop muted playsinline class="hero-video">
+                    <video
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        preload="metadata"
+                        class="hero-video"
+                        aria-hidden="true"
+                    >
                         <source src="./videos/hero-bg.webm" type="video/webm" />
                     </video>
                     <div class="video-overlay"></div>
                 </div>
-            </div>
+            </section>
         </header>
 
-        <main>
+        <main id="mainContent">
             <section class="new-collection-section">
                 <div class="new-collection-container">
                     <header class="new-collection-header">
                         <img
                             src="./images/new_collection.svg"
-                            alt="new collection"
+                            alt="New collection visual"
                             class="new-collection-image"
+                            loading="lazy"
                         />
 
                         <div class="new-collection-title-wrapper">
@@ -192,7 +231,6 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nam ornare, nisl non rhoncus commodo, turpis
-                            <br />
                             elit ultricies justo, vitae molestie quam justo ut
                             lacus. Proin vitae
                         </p>
@@ -226,7 +264,6 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nam ornare, nisl non rhoncus commodo, turpis
-                            <br />
                             elit ultricies justo, vitae molestie quam justo ut
                             lacus. Proin vitae
                         </p>
@@ -253,4 +290,3 @@
         <script type="module" src="./script/script.js"></script>
     </body>
 </html>
-s
