@@ -27,6 +27,7 @@
             href="./styles/components/collections-section.css"
         />
         <link rel="stylesheet" href="./styles/components/faq.css" />
+        <link rel="stylesheet" href="./styles/components/inquiry.css" />
 
         <link rel="stylesheet" href="./styles/components/features.css" />
         <link rel="stylesheet" href="./styles/components/marquee.css" />
@@ -714,6 +715,162 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="inquiry-section" aria-labelledby="inquiry-title">
+                <div class="inquiry-container">
+                    <div class="inquiry-grid">
+                        <div class="inquiry-content">
+                            <h2 id="inquiry-title" class="inquiry-title">
+                                MAKE AN<br />INQUIRY
+                            </h2>
+                            <p class="inquiry-desc">
+                                Lorem ipsum dolor sit amet, consectetur <br />
+                                adipiscing elit. Nam ornare, nisl non rhoncus
+                                <br />
+                                commodo.
+                            </p>
+                        </div>
+
+                        <div class="inquiry-form-wrapper">
+                            <form class="inquiry-form" action="#" method="POST">
+                                <div class="form-radio-group" role="radiogroup">
+                                    <label class="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="inquiry_type"
+                                            value="onsite"
+                                            checked
+                                        />
+                                        Onsite
+                                    </label>
+                                    <label class="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="inquiry_type"
+                                            value="hybrid"
+                                        />
+                                        Hybrid
+                                    </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group floating-group">
+                                        <input
+                                            type="text"
+                                            id="fullName"
+                                            class="form-control"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label
+                                            for="fullName"
+                                            class="floating-label"
+                                            >Full name*</label
+                                        >
+                                    </div>
+                                    <div class="form-group floating-group">
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            class="form-control"
+                                            placeholder=" "
+                                            value="Plaimanas@gmail.com"
+                                            required
+                                        />
+                                        <label
+                                            for="email"
+                                            class="floating-label"
+                                            >Email*</label
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group floating-group">
+                                        <input
+                                            type="text"
+                                            id="phone"
+                                            class="form-control"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label
+                                            for="phone"
+                                            class="floating-label"
+                                            >Phone Number*</label
+                                        >
+                                    </div>
+
+                                    <div
+                                        class="form-group floating-group select-group"
+                                    >
+                                        <select
+                                            id="subject"
+                                            class="form-control"
+                                            required
+                                        >
+                                            <option
+                                                value=""
+                                                disabled
+                                                selected
+                                                hidden
+                                            ></option>
+                                            <option value="order_status">
+                                                Order Status
+                                            </option>
+                                            <option value="returns">
+                                                Returns & Exchanges
+                                            </option>
+                                            <option value="product_info">
+                                                Product Information
+                                            </option>
+                                            <option value="partnership">
+                                                Partnership & PR
+                                            </option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label
+                                            for="subject"
+                                            class="floating-label"
+                                            >Select Subject*</label
+                                        >
+
+                                        <svg
+                                            class="dropdown-icon"
+                                            viewBox="0 0 14 8"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M1 1L7 7L13 1"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="form-checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input
+                                            type="checkbox"
+                                            name="terms"
+                                            required
+                                        />
+                                        I agree to all terms & conditions
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn-submit">
+                                    SEND
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

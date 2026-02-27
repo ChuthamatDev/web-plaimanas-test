@@ -1,0 +1,202 @@
+.inquiry-section {
+    background-color: var(--color-white);
+    padding: 100px 0;
+}
+
+.inquiry-container {
+    max-width: 1092px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.inquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+}
+
+.inquiry-title {
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 0 0 24px 0;
+    line-height: 1.1;
+}
+
+.inquiry-subtitle {
+    display: none;
+}
+
+.inquiry-desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: var(--color-black);
+    line-height: 1.4;
+    margin: 0;
+    max-width: 320px;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.floating-group {
+    position: relative;
+    padding-top: 16px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: var(--color-black);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-bottom-color: var(--color-black);
+}
+
+.floating-label {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left top;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.form-control:focus ~ .floating-label,
+.form-control:not(:placeholder-shown) ~ .floating-label {
+    top: 0;
+    font-size: 12px;
+    color: var(--color-black);
+}
+
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 24px;
+}
+
+select.form-control:focus ~ .floating-label,
+select.form-control:valid ~ .floating-label {
+    top: 0;
+    font-size: 12px;
+    color: var(--color-black);
+}
+
+select.form-control:invalid {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.select-group {
+    position: relative;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+    width: 12px;
+    height: 7px;
+    color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+select.form-control:focus ~ .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.form-radio-group {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.radio-label input,
+.checkbox-label input {
+    accent-color: var(--color-black);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.btn-submit {
+    align-self: flex-start;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -10px;
+}
+
+.btn-submit:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .inquiry-section {
+        padding: 60px 0;
+    }
+    .inquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .inquiry-title {
+        font-size: 32px;
+    }
+    s .inquiry-desc {
+        max-width: 100%;
+    }
+    .btn-submit {
+        width: 100%;
+    }
+}
