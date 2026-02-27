@@ -1,7 +1,6 @@
 .hero-scroll-container {
     position: relative;
     background-color: var(--color-black);
-    padding-top: var(--nav-height);
     height: calc(200vh - var(--nav-height));
 }
 
@@ -9,7 +8,7 @@
     position: sticky;
     top: var(--nav-height);
     width: 100%;
-    height: calc(100vh - var(--nav-height));
+    height: 100vh;
     margin: 0 auto;
     background-color: var(--color-black);
     overflow: hidden;

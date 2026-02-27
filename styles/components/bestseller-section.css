@@ -13,20 +13,9 @@
 }
 
 .bestseller-header {
-    position: relative;
     display: grid;
     width: 100%;
     margin-bottom: var(--space-md);
-    overflow: hidden;
-}
-
-.bestseller-header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    pointer-events: none;
 }
 
 .bestseller-header>* {
@@ -34,21 +23,13 @@
 }
 
 .bestseller-video {
-    position: relative;
-    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    opacity: 0.99;
-    transform: translateZ(0);
-    will-change: transform;
 }
 
-
 .bestseller-title-wrapper {
-    position: relative;
-    z-index: 3;
     align-self: end;
     height: 50%;
     width: 100%;
@@ -58,17 +39,13 @@
 .bestseller-title-wrapper h1 {
     position: sticky;
     top: calc(50vh - 0.4em);
-    /* ระยะล็อคบนหน้าจอ */
-
-    line-height: 0.8;
-
-    /* 💡 THE FIX: ดึงตัวอักษรขึ้นไปครึ่งนึง (0.4em) เพื่อให้อยู่กึ่งกลางรูปภาพเป๊ะๆ */
-    margin-top: -0.4em;
+    line-height: 1.0;
+    margin-top: -1.0em;
     margin-bottom: 0;
-    
+
     text-align: center;
     color: var(--color-white);
-    font-size: 80px;
+    font-size: clamp(40px, 8vw, 80px);
     font-family: var(--font-family);
     font-weight: 900;
     text-transform: uppercase;
@@ -83,7 +60,7 @@
     max-width: 715px;
     width: 100%;
     text-align: center;
-    padding: 0 20px;
+    padding: -50px;
 }
 
 .bestseller-details h4 {
@@ -99,7 +76,6 @@
     text-transform: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 1.4;
-    font-weight: 400;
+    line-height: 1.6;
     color: var(--color-black);
 }
