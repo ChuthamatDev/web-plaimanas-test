@@ -1,8 +1,10 @@
-import { initNavigation } from './navigation.js';
-import { initHeroAnimation } from './hero-animation.js';
+import { initNavigation } from './navigation.js'
+import { initHeroAnimation } from './hero-animation.js'
+import { initLanguageSelector, initEditorialDropdown } from './ui-controller.js'
 
-// เริ่มทำงานเมื่อ DOM พร้อม
 document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
-    initHeroAnimation();
-});
+    initLanguageSelector()
+    initEditorialDropdown()
+    initNavigation()
+    initHeroAnimation()
+})

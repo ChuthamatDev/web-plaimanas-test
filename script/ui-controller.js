@@ -1,58 +1,51 @@
 export const initLanguageSelector = () => {
-    const selector = document.querySelector('#languageSelector');
-    const btn = selector.querySelector('.lang-btn');
+    const selector = document.querySelector('#languageSelector')
+    const btn = selector.querySelector('.lang-btn')
 
     btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        selector.classList.toggle('active');
-        const isExpanded = selector.classList.contains('active');
-        btn.setAttribute('aria-expanded', isExpanded);
-    });
+        e.stopPropagation()
+        selector.classList.toggle('active')
+        const isExpanded = selector.classList.contains('active')
+        btn.setAttribute('aria-expanded', isExpanded)
+    })
 
     document.addEventListener('click', () => {
-        selector.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-    });
+        selector.classList.remove('active')
+        btn.setAttribute('aria-expanded', 'false')
+    })
 
     selector.querySelector('.lang-dropdown').addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-};
+        e.stopPropagation()
+    })
+}
 
 export const initEditorialDropdown = () => {
-    const editorialMenu = document.querySelector('[data-menu="editorial"]');
-    let timeoutId = null;
+    const editorialMenu = document.querySelector('[data-menu="editorial"]')
+    let timeoutId = null
 
-    if (!editorialMenu) return; 
+    if (!editorialMenu) return
 
     const showMenu = () => {
-        clearTimeout(timeoutId);
-        editorialMenu.classList.add('active');
-        document.body.classList.add('editorial-mode'); 
-    };
+        clearTimeout(timeoutId)
+        editorialMenu.classList.add('active')
+        document.body.classList.add('editorial-mode')
+    }
 
     const hideMenu = () => {
         timeoutId = setTimeout(() => {
-            editorialMenu.classList.remove('active');
-            document.body.classList.remove('editorial-mode');
-        }, 150); 
-    };
+            editorialMenu.classList.remove('active')
+            document.body.classList.remove('editorial-mode')
+        }, 150)
+    }
 
-    editorialMenu.addEventListener('mouseenter', showMenu);
-    editorialMenu.addEventListener('mouseleave', hideMenu);
+    editorialMenu.addEventListener('mouseenter', showMenu)
+    editorialMenu.addEventListener('mouseleave', hideMenu)
 
-
-    const items = editorialMenu.querySelectorAll('.dropdown-item');
-    items.forEach(item => {
+    const items = editorialMenu.querySelectorAll('.dropdown-item')
+    items.forEach((item) => {
         item.addEventListener('click', (e) => {
-            editorialMenu.classList.remove('active');
-            document.body.classList.remove('editorial-mode');
-        });
-    });
-};
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    initLanguageSelector();
-    initEditorialDropdown();
-});
+            editorialMenu.classList.remove('active')
+            document.body.classList.remove('editorial-mode')
+        })
+    })
+}
