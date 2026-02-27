@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .hero-logo-wrapper {
+        top: calc(var(--nav-height) + 12px);
+    }
+
+    .hero-logo-inner {
+        width: min(95vw, 900px);
+    }
+}

@@ -50,31 +50,3 @@
         transform: translateX(calc(-100% - 95px));
     }
 }
-
-@media (max-width: 768px) {
-    .marquee-section {
-        height: 60px;
-    }
-
-    .marquee-text {
-        font-size: 32px;
-    }
-    s .marquee-icon {
-        width: 32px;
-        height: auto;
-    }
-
-    .marquee-track,
-    .marquee-content {
-        gap: 40px;
-    }
-
-    @keyframes scrollLeft {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-100% - 40px));
-        }
-    }
-}

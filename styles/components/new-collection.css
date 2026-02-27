@@ -18,7 +18,7 @@
     margin-bottom: 0;
 }
 
-.new-collection-header>* {
+.new-collection-header > * {
     grid-area: 1 / 1;
 }
 
@@ -41,54 +41,25 @@
 .new-collection-title-wrapper h1 {
     position: sticky;
     top: calc(50vh - 0.4em);
-    line-height: 1.0;
+    line-height: 1;
     margin-top: -0.5em;
     margin-bottom: 0;
-
     text-align: center;
     color: var(--color-white);
     font-size: 80px;
     font-family: var(--font-family);
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     z-index: 10;
     pointer-events: none;
 }
 
-.new-collection-details {
+.new-collection-description {
     margin-top: var(--space-md);
-    max-width: 715px;
-    width: 100%;
-    text-align: center;
-    padding: 0 20px;
 }
 
-.new-collection-details h4 {
-    text-transform: none;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    margin-bottom: var(--space-sm);
-    color: var(--color-black);
-}
-
-.new-collection-details p {
-    text-transform: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 400;
-    color: var(--color-black);
-}
-
-/* --- Responsive มือถือ --- */
-@media (max-width: 768px) {
-    .new-collection-section {
-        padding: 50px 0;
-    }
-
-    .new-collection-title-wrapper h1 {
-        margin-bottom: -8vw;
-    }
+.new-collection-description:hover {
+    opacity: 0.5;
+    cursor: pointer;
 }

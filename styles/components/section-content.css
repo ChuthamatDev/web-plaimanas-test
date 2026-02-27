@@ -1,0 +1,27 @@
+.new-collection-description,
+.bestseller-description {
+    max-width: 715px;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.new-collection-description h4,
+.bestseller-description h4 {
+    text-transform: none;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--color-black);
+}
+
+.new-collection-description p,
+.bestseller-description p {
+    text-transform: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-black);
+    line-height: 1.4;
+}

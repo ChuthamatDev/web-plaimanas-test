@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .new-collection-section {
+        padding: 50px 0;
+    }
+
+    .new-collection-title-wrapper h1 {
+        margin-bottom: -8vw;
+    }
+}

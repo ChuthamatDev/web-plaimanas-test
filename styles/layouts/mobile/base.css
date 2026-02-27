@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    :root {
+        --text-hero: 3rem;
+        --space-md: 24px;
+        --space-lg: 40px;
+    }
+}

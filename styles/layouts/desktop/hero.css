@@ -1,0 +1,5 @@
+@media (min-width: 1024px) {
+    .hero-video {
+        object-position: center 22%;
+    }
+}

@@ -30,12 +30,6 @@
     transform: translateZ(0);
 }
 
-@media (min-width: 1024px) {
-    .hero-video {
-        object-position: center 22%;
-    }
-}
-
 .video-overlay {
     background: rgba(0, 0, 0, 0.2);
     z-index: 2;
@@ -93,14 +87,4 @@
 
 .hero-logo-wrapper.is-compact .logo-small {
     opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .hero-logo-wrapper {
-        top: calc(var(--nav-height) + 12px);
-    }
-
-    .hero-logo-inner {
-        width: min(95vw, 900px);
-    }
 }

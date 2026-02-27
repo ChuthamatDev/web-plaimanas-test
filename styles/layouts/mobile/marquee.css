@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    .marquee-section {
+        height: 60px;
+    }
+
+    .marquee-track,
+    .marquee-content {
+        gap: 40px;
+    }
+
+    .marquee-content {
+        animation-name: scrollLeftMobile;
+    }
+
+    .marquee-text {
+        font-size: 32px;
+    }
+
+    .marquee-icon {
+        width: 32px;
+        height: auto;
+    }
+
+    @keyframes scrollLeftMobile {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-100% - 40px));
+        }
+    }
+}
