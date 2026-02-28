@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .new-collection-section {
-        padding: 100px 50px;
+        padding: 0 50px;
     }
 
     .new-collection-title-wrapper h1 {
@@ -18,9 +18,5 @@
         letter-spacing: 0;
         z-index: 10;
         pointer-events: none;
-    }
-
-    .new-collection-description {
-        margin-top: var(--space-md);
     }
 }
