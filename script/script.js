@@ -6,6 +6,7 @@ import {
     initScrollToTop,
 } from './ui-controller.js'
 import { initFAQ } from './faq.js'
+import { initScrollAnimations } from './scroll-observer.js'
 
 const initializers = [
     initLanguageSelector,
@@ -14,6 +15,7 @@ const initializers = [
     initHeroAnimation,
     initFAQ,
     initScrollToTop,
+    initScrollAnimations,
 ]
 
 const bootstrapApplication = () => {

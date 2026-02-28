@@ -4,17 +4,25 @@
     }
 
     .collections-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
-    .collection-item-video,
-    .collection-item-image {
+    .collection-item-video {
         grid-column: 1 / -1;
         aspect-ratio: 16 / 9;
     }
 
-    .collection-item-video .collection-title,
+    .collection-item-image {
+        grid-template-columns: span 1;
+        aspect-ratio: 1 / 1;
+    }
+
+    .collection-item-video .collection-title {
+        font-size: 32px;
+    }
+
     .collection-item-image .collection-title {
-        font-size: var(--text-2xl);
+        font-size: 20px;
     }
 }
