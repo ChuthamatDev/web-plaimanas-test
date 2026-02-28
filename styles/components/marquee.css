@@ -21,7 +21,6 @@
     gap: var(--marquee-gap);
     flex-shrink: 0;
     animation: scrollLeft 20s linear infinite;
-    will-change: transform;
 }
 
 .marquee-text {
@@ -47,6 +46,7 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(calc(-100% - var(--marquee-gap)));
     }

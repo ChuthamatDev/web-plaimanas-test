@@ -1,31 +1,84 @@
-# 🚀 Interview Practical Test Assignment
+# 🧶 Plaimanas - Frontend Practical Test
 
-โปรเจ็คนี้พัฒนาขึ้นเพื่อเป็นส่วนหนึ่งของ **Interview Practical Test Assignment** โดยรวบรวมโครงสร้างพื้นฐานที่จำเป็นสำหรับการสร้างแอปพลิเคชันเว็บที่มีคุณภาพ มีระเบียบ และง่ายต่อการต่อยอด
-
-## 📂 โครงสร้างโปรเจ็ค (Project Structure)
-
-โครงสร้างโฟลเดอร์ถูกแยกตามหน้าที่ (Separation of Concerns) เพื่อให้การจัดการ Code มีประสิทธิภาพสูงสุด:
-
-- 🖥️ **`backend/`** : รวบรวมไฟล์สำหรับ Logic ฝั่ง Server-side และการจัดการ API
-- 📊 **`data/`** : จัดเก็บข้อมูลดิบ, JSON files หรือ Mock Data สำหรับการทดสอบ
-- 🎨 **`styles/`** : ไฟล์ CSS ทั้งหมดที่ใช้ในการตกแต่งหน้าตาของเว็บไซต์
-- ⚙️ **`script/`** : แหล่งรวม JavaScript Logic ที่ทำหน้าที่ควบคุมพฤติกรรมของแอปพลิเคชัน
-- 🖼️ **`images/`** : จัดเก็บรูปภาพ, ไอคอน และ Assets ต่างๆ ที่ใช้ในโปรเจ็ค
-- 📄 **`index.html`** : ไฟล์หลักที่เป็นเนื้อหาโครงสร้างหน้าแรกของแอปพลิเคชัน
-
-## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
-
-โปรเจ็คนี้เน้นการใช้เทคโนโลยีมาตรฐานเพื่อให้เกิดประสิทธิภาพและความเข้ากันได้สูงสุด:
-- **HTML5** : สำหรับโครงสร้าง Semantic Web
-- **CSS3** : การจัดรูปแบบ UI ที่ทันสมัยและ Responsive
-- **JavaScript (Vanilla JS)** : การจัดการ Logic และ Interaction ต่างๆ
-- **Git** : สำหรับ Version Control
-
-## 🎯 วัตถุประสงค์ (Objectives)
-
-1. **Clean Code**: โค้ดที่อ่านง่ายและมีการจัดหมวดหมู่ชัดเจน
-2. **Standard Folder Structure**: การจัดวางโฟลเดอร์ตามมาตรฐานสากล
-3. **Scalability**: สามารถเพิ่ม Feature ใหม่ๆ ได้อย่างรวดเร็วโดยไม่กระทบโครงสร้างเดิม
+## 📖 Introduction
+This project is a detailed implementation of a modern, premium fashion e-commerce landing page for **Plaimanas**. It was developed as part of a **Frontend Practical Interview Test**, focusing on pixel-perfect UI, responsive design, and smooth user interactions using core web technologies.
 
 ---
-*จัดทำโดย: [ChuthamatDev](https://github.com/ChuthamatDev)*
+
+## ✨ Key Features
+
+### 🎬 Immersive Hero Experience
+- **Sticky Video Background**: A high-quality full-screen video background that maintains its position while scrolling.
+- **Dynamic Logo Transitions**: Smooth transitions between the large hero logo and the navigation logo.
+
+### �️ Collections & Showcases
+- **Interactive Hover Effects**: Collection items feature a "Reveal" effect where hovering over an image reveals a video or an alternative view.
+- **Animated Marquee**: A continuous scrolling "New Arrival" and "Best Selling" banner to catch users' attention.
+
+### 🛠️ Advanced UI Components
+- **Tabbed FAQ Accordion**: A functional FAQ section organized by categories (Shipping, Returns, etc.) with smooth open/close animations.
+- **Modern Inquiry Form**: Featuring interactive radio buttons, floating label inputs, and a custom-styled dropdown.
+- **Responsive Navigation**: A fully functional navbar with a language selector, sign-in links, and a mobile-responsive burger menu with a dark overlay.
+
+---
+
+## 🛠️ Tech Stack
+This project is built using only standard web technologies to demonstrate proficiency in core development:
+
+- **HTML5**: Semantic structure for SEO and accessibility.
+- **CSS3 (Vanilla)**:
+    - Custom Variable System (Design Tokens)
+    - CSS Grid & Flexbox for complex layouts
+    - Keyframe animations for micro-interactions
+    - Responsive Media Queries
+- **JavaScript (ES6+)**:
+    - DOM Manipulation for interactive components
+    - Observer API for scroll-based animations (Hero & Logo)
+    - Event handling for the FAQ and Form logic
+
+---
+
+## 📂 Project Structure
+The repository is organized following the **Separation of Concerns (SoC)** principle:
+
+```text
+/
+├── index.html        # Main entry point
+├── styles/           # All CSS stylesheets
+│   └── main.css      # Core styling logic
+├── script/           # JavaScript logic
+│   └── script.js     # Interactivity & DOM manipulation
+├── images/           # All graphical assets (SVG, PNG, JPG)
+├── videos/           # Optimized video assets for background/hover
+└── README.md         # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+Since this is a client-side project using Vanilla technologies, no installation is required.
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/ChuthamatDev/web-plaimanas-test.git
+    ```
+2.  **Open the project**:
+    Simply double-click `index.html` in your browser, or use VS Code's **Live Server** extension for the best experience.
+
+---
+
+## 🎨 Design Philosophy
+The design follows a **Minimalist Luxury** aesthetic:
+- **Typography**: Utilizing the *Hanken Grotesk* font for a modern and clean look.
+- **Spacing**: Generous whitespace to highlight the premium nature of the products.
+- **Animations**: Subtle and purposeful, enhancing the UX without being distracting.
+
+---
+
+## 👤 Author
+**Chuthamat (Ant)**
+- GitHub: [@ChuthamatDev](https://github.com/ChuthamatDev)
+- Role: Frontend Developer
+
+---
+*Generated by Antigravity AI for Plaimanas Practical Test.*

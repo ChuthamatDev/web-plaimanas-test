@@ -3,6 +3,7 @@ import { initHeroAnimation } from './hero-animation.js'
 import { initLanguageSelector, initScrollToTop } from './ui-controller.js'
 import { initFAQ } from './faq.js'
 import { initScrollAnimations } from './scroll-observer.js'
+import { initVideoOptimizer } from './video-optimizer.js'
 
 const initializers = [
     initLanguageSelector,
@@ -11,6 +12,7 @@ const initializers = [
     initFAQ,
     initScrollToTop,
     initScrollAnimations,
+    initVideoOptimizer,
 ]
 
 const bootstrapApplication = () => {

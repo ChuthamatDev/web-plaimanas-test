@@ -7,7 +7,6 @@
     color: var(--color-black);
 
     transition: var(--transition-smooth);
-    will-change: opacity;
 }
 
 .nav-link-signin:hover {
@@ -29,7 +28,6 @@
     cursor: pointer;
 
     transition: var(--transition-smooth);
-    will-change: opacity;
 }
 
 .cart-icon:hover {

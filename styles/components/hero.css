@@ -53,7 +53,6 @@
     transform: scale(1);
     transform-origin: top center;
     transition: transform 600ms linear;
-    will-change: transform;
 }
 
 .hero-logo-wrapper.is-compact .hero-logo-inner {
@@ -106,6 +105,7 @@
     .hero-logo-wrapper.is-compact .logo-large {
         opacity: 1 !important;
     }
+
     .hero-logo-wrapper.is-compact .logo-small {
         opacity: 0 !important;
     }
