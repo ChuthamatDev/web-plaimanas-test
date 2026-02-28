@@ -88,3 +88,19 @@
 .hero-logo-wrapper.is-compact .logo-small {
     opacity: 1;
 }
+
+@media (max-width: var(--bp-md)) {
+    .hero-logo-wrapper {
+        top: calc(var(--nav-height) + 12px);
+    }
+
+    .hero-logo-inner {
+        width: min(95vw, 900px);
+    }
+}
+
+@media (min-width: var(--bp-lg)) {
+    .hero-video {
+        object-position: center 22%;
+    }
+}
