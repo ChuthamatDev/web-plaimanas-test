@@ -1,9 +1,26 @@
 @media (max-width: 768px) {
     .new-collection-section {
-        padding: 50px 0;
+        padding: 100px 50px;
     }
 
     .new-collection-title-wrapper h1 {
-        margin-bottom: -8vw;
+        position: sticky;
+        top: calc(50vh - 0.4em);
+        line-height: 1;
+        margin-top: -0.5em;
+        margin-bottom: 0;
+        text-align: center;
+        color: var(--color-white);
+        font-size: 80px;
+        font-family: var(--font-family);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .new-collection-description {
+        margin-top: var(--space-md);
     }
 }

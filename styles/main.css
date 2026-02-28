@@ -16,3 +16,6 @@
 @import './components/features.css';
 @import './components/marquee.css';
 @import './components/section-content.css';
+
+@import './layouts/mobile.css';
+@import './layouts/desktop.css';
