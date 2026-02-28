@@ -14,8 +14,24 @@ export const initNavigation = () => {
     mobileBtn.addEventListener('click', (e) => {
         e.stopPropagation()
         const isOpen = navCenter.classList.toggle('open')
-
         document.body.style.overflow = isOpen ? 'hidden' : ''
+
+        const logoWrapper = document.getElementById('heroLogoWrapper')
+
+        if (logoWrapper && isMobile()) {
+            if (isOpen) {
+                const currentTop = logoWrapper.getBoundingClientRect().top
+
+                const logoHeight = logoWrapper.offsetHeight
+
+                const targetY =
+                    window.innerHeight - currentTop - logoHeight - 40
+
+                logoWrapper.style.transform = `translateY(${targetY}px)`
+            } else {
+                logoWrapper.style.transform = ''
+            }
+        }
     })
 
     if (editorialLink) {
