@@ -1,39 +1,99 @@
-/**
- * Smart video playback optimizer using IntersectionObserver.
- * Pauses videos when they are not in the viewport to save CPU/GPU resources.
- */
 export const initVideoOptimizer = () => {
-    const videos = document.querySelectorAll('video');
+    const connection =
+        navigator.connection ||
+        navigator.mozConnection ||
+        navigator.webkitConnection
+    const isPoorNetwork =
+        connection &&
+        (connection.effectiveType.includes('2g') || connection.saveData)
+    const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches
 
-    if (!videos.length) return;
+    const skipHeavyMedia = isPoorNetwork
 
-    const videoObserver = new IntersectionObserver(
+    const videos = document.querySelectorAll('video')
+    if (!videos.length) return
+
+    const activateSource = (video) => {
+        if (!video.dataset.src || video.src) return
+
+        const source = video.querySelector('source')
+        if (source) {
+            source.src = video.dataset.src
+            video.load()
+            delete video.dataset.src
+        }
+    }
+
+    const playSafely = async (video) => {
+        if (!video.paused || prefersReducedMotion) return
+
+        try {
+            if (video.readyState < 3) video.load()
+
+            await video.play()
+            video.style.opacity = '1'
+        } catch (error) {
+            console.warn(
+                '[VideoEngine] Auto-play was prevented by the browser.'
+            )
+        }
+    }
+
+    const loadObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                const video = entry.target;
+                if (entry.isIntersecting) {
+                    activateSource(entry.target)
+                    loadObserver.unobserve(entry.target)
+                }
+            })
+        },
+        { rootMargin: '400px 0px' }
+    )
+
+    const playbackObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target
+
+                if (video.classList.contains('hover-content')) return
 
                 if (entry.isIntersecting) {
-                    // Start playing if it's in view
-                    const playPromise = video.play();
-                    
-                    if (playPromise !== undefined) {
-                      playPromise.catch(() => {
-                        // Handle auto-play prevention if any
-                      });
-                    }
+                    if (!skipHeavyMedia) playSafely(video)
                 } else {
-                    // Pause if it's out of view
-                    video.pause();
+                    video.pause()
                 }
-            });
+            })
         },
-        {
-            // Trigger when even a small part of the video is visible
-            threshold: 0.1,
-        }
-    );
+        { threshold: 0.2 }
+    )
 
     videos.forEach((video) => {
-        videoObserver.observe(video);
-    });
-};
+        video.muted = true
+        video.setAttribute('playsinline', '')
+
+        loadObserver.observe(video)
+        playbackObserver.observe(video)
+
+        if (video.classList.contains('hover-content')) {
+            const container = video.closest(
+                '.collection-item-video, .collection-item-image, .hover-media'
+            )
+            if (container) {
+                const handleHover = () => {
+                    activateSource(video)
+                    playSafely(video)
+                }
+                const handleLeave = () => video.pause()
+
+                container.addEventListener('mouseenter', handleHover)
+                container.addEventListener('mouseleave', handleLeave)
+                container.addEventListener('touchstart', handleHover, {
+                    passive: true,
+                })
+            }
+        }
+    })
+}
