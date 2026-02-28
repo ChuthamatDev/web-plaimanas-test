@@ -67,7 +67,7 @@
 }
 
 .footer-links a:hover {
-    opacity: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 .newsletter-form {
