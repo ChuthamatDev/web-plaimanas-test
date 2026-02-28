@@ -4,10 +4,8 @@ export const initLanguageSelector = () => {
 
     if (!selector || !btn) return
 
-    // ฟังก์ชันเช็คว่าเป็น Mobile หรือไม่
     const isMobile = () => window.innerWidth <= 768
 
-    // 1. ระบบ Click (สำหรับ Mobile หรือคลิกบน Desktop)
     btn.addEventListener('click', (e) => {
         e.stopPropagation()
         selector.classList.toggle('active')
@@ -15,7 +13,6 @@ export const initLanguageSelector = () => {
         btn.setAttribute('aria-expanded', isExpanded)
     })
 
-    // 2. 💡 THE FIX: เพิ่มระบบ Hover (mouseenter / mouseleave) สำหรับ Desktop
     selector.addEventListener('mouseenter', () => {
         if (!isMobile()) {
             selector.classList.add('active')
@@ -30,13 +27,11 @@ export const initLanguageSelector = () => {
         }
     })
 
-    // 3. ปิดเมนูเมื่อคลิกที่อื่นบนหน้าจอ
     document.addEventListener('click', () => {
         selector.classList.remove('active')
         btn.setAttribute('aria-expanded', 'false')
     })
 
-    // 4. ป้องกันเมนูปิดเวลาคลิกข้างใน Dropdown
     const dropdown = selector.querySelector('.lang-dropdown')
     if (dropdown) {
         dropdown.addEventListener('click', (e) => {
@@ -72,6 +67,21 @@ export const initEditorialDropdown = () => {
         item.addEventListener('click', (e) => {
             editorialMenu.classList.remove('active')
             document.body.classList.remove('editorial-mode')
+        })
+    })
+}
+
+export const initScrollToTop = () => {
+    const scrollBtn = document.getElementById('scrollToHomepageBtn')
+
+    if (!scrollBtn) return
+
+    scrollBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
         })
     })
 }

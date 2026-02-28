@@ -1,6 +1,10 @@
 import { initNavigation } from './navigation.js'
 import { initHeroAnimation } from './hero-animation.js'
-import { initLanguageSelector, initEditorialDropdown } from './ui-controller.js'
+import {
+    initLanguageSelector,
+    initEditorialDropdown,
+    initScrollToTop,
+} from './ui-controller.js'
 import { initFAQ } from './faq.js'
 
 const initializers = [
@@ -9,6 +13,7 @@ const initializers = [
     initNavigation,
     initHeroAnimation,
     initFAQ,
+    initScrollToTop,
 ]
 
 const bootstrapApplication = () => {
