@@ -2,6 +2,6 @@
     .bestseller-section {
         position: relative;
         background-color: var(--color-white);
-        padding: 0 40px;
+        padding: 100px 40px;
     }
 }
