@@ -47,12 +47,16 @@ export const initEditorialDropdown = () => {
     if (!editorialMenu) return
 
     const showMenu = () => {
+        if (isMobile()) return
+
         clearTimeout(timeoutId)
         editorialMenu.classList.add('active')
         document.body.classList.add('editorial-mode')
     }
 
     const hideMenu = () => {
+        if (isMobile()) return
+
         timeoutId = setTimeout(() => {
             editorialMenu.classList.remove('active')
             document.body.classList.remove('editorial-mode')
@@ -63,6 +67,7 @@ export const initEditorialDropdown = () => {
     editorialMenu.addEventListener('mouseleave', hideMenu)
 
     const items = editorialMenu.querySelectorAll('.dropdown-item')
+
     items.forEach((item) => {
         item.addEventListener('click', (e) => {
             editorialMenu.classList.remove('active')

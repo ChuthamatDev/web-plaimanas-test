@@ -1,16 +1,11 @@
 import { initNavigation } from './navigation.js'
 import { initHeroAnimation } from './hero-animation.js'
-import {
-    initLanguageSelector,
-    initEditorialDropdown,
-    initScrollToTop,
-} from './ui-controller.js'
+import { initLanguageSelector, initScrollToTop } from './ui-controller.js'
 import { initFAQ } from './faq.js'
 import { initScrollAnimations } from './scroll-observer.js'
 
 const initializers = [
     initLanguageSelector,
-    initEditorialDropdown,
     initNavigation,
     initHeroAnimation,
     initFAQ,
