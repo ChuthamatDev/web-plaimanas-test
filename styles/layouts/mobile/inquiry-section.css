@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+    .inquiry-section {
+        padding: 60px 0;
+    }
+
+    .inquiry-content {
+        padding: 20px 0;
+    }
+
+    .inquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .inquiry-title {
+        font-size: 40px;
+    }
+
+    .inquiry-title br {
+        display: none;
+    }
+
+    .inquiry-desc {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1;
+        margin-top: -0.5em;
+    }
+
+    .inquiry-desc br {
+        display: none;
+    }
+
+    .inquiry-form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    .footer-top-label {
+        padding-left: 20px;
+        margin-bottom: 5px;
+    }
+    .footer-container {
+        padding: 0 20px;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+    .newsletter-column {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+    .footer-bottom {
+        flex-direction: row;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .newsletter-column {
+        grid-column: 1 / -1;
+        max-width: 400px;
+    }
+}

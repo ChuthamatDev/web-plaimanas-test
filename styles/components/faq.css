@@ -41,12 +41,11 @@
 }
 
 .faq-tab {
-    background: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(130, 130, 130, 1);
     color: var(--color-white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(130, 130, 130, 1);
+    padding: 10px 15px;
     border-radius: 100px;
-    padding: 8px 14px;
     font-size: 13px;
     font-weight: 400;
     font-family: var(--font-family);
@@ -55,12 +54,7 @@
     transition: all 300ms ease-in-out;
 }
 
-.faq-tab:hover {
-    border-color: var(--color-white);
-    color: var(--color-black);
-    background-color: var(--color-white);
-}
-
+.faq-tab:hover,
 .faq-tab.active {
     background-color: var(--color-white);
     color: var(--color-black);
@@ -128,7 +122,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 0;
     padding-bottom: 24px;
 }
@@ -139,20 +133,4 @@
 
 .faq-accordion.is-open .faq-chevron {
     transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-    .faq-title {
-        font-size: 32px;
-    }
-    .faq-question {
-        font-size: 14px;
-    }
-    .faq-tabs {
-        gap: 10px;
-    }
-    .faq-tab {
-        padding: 10px 16px;
-        font-size: 12px;
-    }
 }

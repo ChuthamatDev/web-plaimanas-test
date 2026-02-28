@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 24px;
+    }
+    .faq-question {
+        font-size: 16px;
+    }
+    .faq-tabs {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .faq-tab {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
