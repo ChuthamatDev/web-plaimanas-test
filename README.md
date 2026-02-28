@@ -1,84 +1,79 @@
-# 🧶 Plaimanas - Frontend Practical Test
+# Plaimanas - Frontend Practical Test
 
-## 📖 Introduction
-This project is a detailed implementation of a modern, premium fashion e-commerce landing page for **Plaimanas**. It was developed as part of a **Frontend Practical Interview Test**, focusing on pixel-perfect UI, responsive design, and smooth user interactions using core web technologies.
+## ภาพรวม
 
----
+โครงการนี้คือการพัฒนาแลนดิ้งเพจแฟชั่นพรีเมียมสำหรับแบรนด์ **Plaimanas** โดยมุ่งให้ได้งานระดับ production ทั้งด้านภาพลักษณ์ ความลื่นไหลของอนิเมชัน การตอบสนองบนหลายขนาดหน้าจอ และการจัดระเบียบโค้ดที่อ่านง่าย
 
-## ✨ Key Features
+## ไฮไลต์ฟีเจอร์
 
-### 🎬 Immersive Hero Experience
-- **Sticky Video Background**: A high-quality full-screen video background that maintains its position while scrolling.
-- **Dynamic Logo Transitions**: Smooth transitions between the large hero logo and the navigation logo.
+- วิดีโอเต็มจอแบบติดตามการเลื่อน (sticky hero) พร้อมโปสเตอร์สำรอง
+- โลโก้ปรับขนาดอัตโนมัติระหว่างพื้นที่ Hero และแถบเมนู
+- แบนเนอร์เลื่อนอัตโนมัติ (marquee) สำหรับ New Arrival และ Best Selling
+- เอฟเฟ็กต์ Hover Reveal: รูปคอลเล็กชันสลับเป็นวิดีโอเมื่อชี้เมาส์
+- FAQ แบบแท็บ + อะคอร์เดียนพร้อมแอนิเมชันเปิดปิด
+- ฟอร์มติดต่อเชิงโต้ตอบ (radio, floating label, custom select)
+- เมนูนำทางรองรับมือถือพร้อม language selector และ overlay มืด
+- โหลดวิดีโออย่างชาญฉลาดและหยุดเล่นเมื่ออยู่นอกจอเพื่อลดการใช้แบนด์วิดท์
 
-### �️ Collections & Showcases
-- **Interactive Hover Effects**: Collection items feature a "Reveal" effect where hovering over an image reveals a video or an alternative view.
-- **Animated Marquee**: A continuous scrolling "New Arrival" and "Best Selling" banner to catch users' attention.
+## เทคโนโลยีและสถาปัตยกรรม
 
-### 🛠️ Advanced UI Components
-- **Tabbed FAQ Accordion**: A functional FAQ section organized by categories (Shipping, Returns, etc.) with smooth open/close animations.
-- **Modern Inquiry Form**: Featuring interactive radio buttons, floating label inputs, and a custom-styled dropdown.
-- **Responsive Navigation**: A fully functional navbar with a language selector, sign-in links, and a mobile-responsive burger menu with a dark overlay.
+- **HTML5**: โครงสร้างเชิงความหมาย เน้น SEO และการเข้าถึง
+- **CSS3 (Vanilla)**: Design tokens, Flex/Grid, keyframe animations, media queries
+- **JavaScript ES6+**: DOM interaction, IntersectionObserver สำหรับอนิเมชัน/วิดีโอ, การจัดการสถานะเมนูและ FAQ
+- ไม่พึ่งพาเฟรมเวิร์กหรือบันเดลเลอร์ เพื่อให้เปิดใช้ได้ทันที
 
----
+## โครงสร้างไฟล์และทรัพยากร (รวม assets ที่เกี่ยวข้อง)
 
-## 🛠️ Tech Stack
-This project is built using only standard web technologies to demonstrate proficiency in core development:
-
-- **HTML5**: Semantic structure for SEO and accessibility.
-- **CSS3 (Vanilla)**:
-    - Custom Variable System (Design Tokens)
-    - CSS Grid & Flexbox for complex layouts
-    - Keyframe animations for micro-interactions
-    - Responsive Media Queries
-- **JavaScript (ES6+)**:
-    - DOM Manipulation for interactive components
-    - Observer API for scroll-based animations (Hero & Logo)
-    - Event handling for the FAQ and Form logic
-
----
-
-## 📂 Project Structure
-The repository is organized following the **Separation of Concerns (SoC)** principle:
-
-```text
+```
 /
-├── index.html        # Main entry point
-├── styles/           # All CSS stylesheets
-│   └── main.css      # Core styling logic
-├── script/           # JavaScript logic
-│   └── script.js     # Interactivity & DOM manipulation
-├── images/           # All graphical assets (SVG, PNG, JPG)
-├── videos/           # Optimized video assets for background/hover
-└── README.md         # Project documentation
+|-- index.html                # หน้าแลนดิ้งหลัก
+|-- .prettierrc               # กำหนดรูปแบบโค้ด (ใช้ Prettier)
+|-- README.md
+|-- styles/
+|   |-- base.css               # รีเซ็ตและเบสสไตล์
+|   |-- main.css               # จัดการเลย์เอาต์หลักและคอมโพเนนต์
+|   |-- navbar.css             # สไตล์แถบเมนูและเมนูมือถือ
+|   |-- theme.css              # Design tokens: สี, ฟอนต์, spacing
+|   |-- foundation/            # ไฟล์ฐาน เช่น variables เพิ่มเติม
+|   |-- layouts/               # เลย์เอาต์ระดับเซกชัน
+|   |-- components/            # คอมโพเนนต์ย่อย
+|   `-- utilities/             # ยูทิลิตี้คลาส
+|-- script/
+|   |-- script.js              # จุดเริ่มต้นรวมสคริปต์
+|   |-- navigation.js          # ควบคุม navbar, language, burger menu
+|   |-- hero-animation.js      # จัดการอนิเมชันโลโก้/เฮโร่
+|   |-- scroll-observer.js     # IntersectionObserver สำหรับส่วนที่เลื่อนถึง
+|   |-- ui-controller.js       # ประสานสถานะ UI ทั่วไป
+|   |-- faq.js                 # ลอจิกแท็บและอะคอร์เดียน FAQ
+|   `-- video-optimizer.js     # โหลด/หยุดวิดีโอตามการมองเห็น
+|-- images/                   # ทรัพยากรภาพทั้งหมด
+|   |-- logo_hero.svg, logo_small.svg
+|   |-- hero-poster.png, bestseller-poster.png
+|   |-- collection-01-poster.png, collection-poster.png
+|   |-- collections_01.svg, collections_02.svg, collections_03.svg
+|   |-- new_collection.svg, person_collections.svg
+|   |-- arrow_left_pixel.svg, arrow_right_pixel.svg
+|   |-- dropdown.svg, menu_mobile.svg, close_icon_mobile.svg
+|   `-- meteor-icons_bag-shopping.svg
+|-- videos/                   # ทรัพยากรวิดีโอสำหรับพื้นหลังและ hover
+|   |-- hero-bg.mp4
+|   |-- bestseller-bg.mp4
+|   `-- collection.mp4
+`-- assets/                   # โฟลเดอร์สำรองสำหรับไฟล์เสริม (ปัจจุบันว่าง)
 ```
 
----
+## วิธีใช้งาน
 
-## 🚀 Getting Started
-Since this is a client-side project using Vanilla technologies, no installation is required.
+1. เปิดไฟล์ `index.html` ตรง ๆ ในเบราว์เซอร์ หรือใช้ส่วนขยาย Live Server ของ VS Code เพื่อให้รีเฟรชอัตโนมัติ
+2. ต้องการดูผ่านเซิร์ฟเวอร์แบบเบา ๆ สามารถรัน `npx http-server .` หรือ `npx serve .` (ต้องมี Node.js)
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/ChuthamatDev/web-plaimanas-test.git
-    ```
-2.  **Open the project**:
-    Simply double-click `index.html` in your browser, or use VS Code's **Live Server** extension for the best experience.
+## แนวทางพัฒนาเพิ่มเติม
 
----
+- รักษารูปแบบโค้ดด้วย `npx prettier --write index.html styles script`
+- ถ้าปรับวิดีโอใหม่ แนะนำให้สร้างไฟล์โปสเตอร์ (`*.png`) คู่กันเพื่อให้โหลดเร็วบนเครือข่ายช้า
+- ตรวจสอบเอฟเฟ็กต์ hover และวิดีโอด้วยอุปกรณ์สัมผัส เพราะปฏิสัมพันธ์จะแตกต่างจากเดสก์ท็อป
 
-## 🎨 Design Philosophy
-The design follows a **Minimalist Luxury** aesthetic:
-- **Typography**: Utilizing the *Hanken Grotesk* font for a modern and clean look.
-- **Spacing**: Generous whitespace to highlight the premium nature of the products.
-- **Animations**: Subtle and purposeful, enhancing the UX without being distracting.
+## ผู้จัดทำ
 
----
-
-## 👤 Author
-**Chuthamat (Ant)**
-- GitHub: [@ChuthamatDev](https://github.com/ChuthamatDev)
-- Role: Frontend Developer
-
----
-*Generated by Antigravity AI for Plaimanas Practical Test.*
+**Chuthamat (Ant)** - Frontend Developer  
+GitHub: [@ChuthamatDev](https://github.com/ChuthamatDev)
