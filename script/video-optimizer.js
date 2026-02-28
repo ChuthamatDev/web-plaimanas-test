@@ -18,26 +18,42 @@ export const initVideoOptimizer = () => {
     const activateSource = (video) => {
         if (!video.dataset.src || video.src) return
 
-        const source = video.querySelector('source')
-        if (source) {
-            source.src = video.dataset.src
-            video.load()
-            delete video.dataset.src
+        let source = video.querySelector('source')
+        if (!source) {
+            source = document.createElement('source')
+            source.type = 'video/mp4'
+            video.appendChild(source)
         }
+        
+        source.src = video.dataset.src
+        video.load()
+        delete video.dataset.src
     }
 
     const playSafely = async (video) => {
         if (!video.paused || prefersReducedMotion) return
 
-        try {
-            if (video.readyState < 3) video.load()
+        // Final safety check for mobile compatibility
+        video.muted = true
+        video.setAttribute('playsinline', '')
 
-            await video.play()
-            video.style.opacity = '1'
+        try {
+            // Only play if ready or loading
+            if (video.readyState < 3) {
+                video.load()
+            }
+
+            const playPromise = video.play()
+            if (playPromise !== undefined) {
+                await playPromise
+                video.style.opacity = '1'
+            }
         } catch (error) {
-            console.warn(
-                '[VideoEngine] Auto-play was prevented by the browser.'
-            )
+            // Silently handle autoplay prevention as it's common browser behavior
+            // We'll retry on interaction via global event listeners if needed
+            if (video.autoplay || video.dataset.playOnVisible) {
+                console.debug('[VideoEngine] Autoplay was blocked, waiting for interaction.')
+            }
         }
     }
 
