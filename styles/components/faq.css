@@ -75,6 +75,7 @@
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -133,4 +134,32 @@
 
 .faq-accordion.is-open .faq-chevron {
     transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+    .faq-section {
+        padding: clamp(50px, 8vw, 100px) 0;
+    }
+
+    .faq-container {
+        padding: 0 5vw;
+    }
+
+    .faq-title {
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .faq-tabs {
+        margin-bottom: clamp(30px, 5vw, 60px);
+        gap: 12px;
+    }
+
+    .faq-question {
+        padding: clamp(16px, 3vw, 24px) 0;
+        font-size: clamp(14px, 3vw, 16px);
+    }
+
+    .faq-answer-inner p {
+        padding-bottom: clamp(16px, 3vw, 24px);
+    }
 }

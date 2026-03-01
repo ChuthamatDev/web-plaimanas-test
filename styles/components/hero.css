@@ -5,7 +5,7 @@
 .hero-scroll-container {
     position: relative;
     background-color: var(--color-black, #000);
-    height: calc(200vh - var(--nav-height, 70px));
+    height: calc(130vh - var(--nav-height, 70px));
 }
 
 .sticky-hero-view {
@@ -100,7 +100,6 @@
 
     .hero-logo-wrapper.is-compact .hero-logo-inner {
         transform: scale(1) !important;
-        /* Keep large on mobile as per design */
     }
 
     .hero-logo-wrapper.is-compact .logo-large {

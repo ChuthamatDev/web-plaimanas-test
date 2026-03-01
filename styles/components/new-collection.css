@@ -64,12 +64,24 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .new-collection-section {
-        padding: 50px 0;
+        padding: clamp(50px, 8vw, 100px) 0 clamp(20px, 3vw, 40px) 0;
+    }
+
+    .new-collection-container {
+        padding: 50px 5vw;
     }
 
     .new-collection-title-wrapper h1 {
-        margin-bottom: -8vw;
+        font-size: clamp(50px, 12vw, 80px);
+        margin-bottom: 0vw;
+    }
+
+    .new-collection-description {
+        margin-top: var(--space-md);
+        margin-bottom: 0;
+        width: 100%;
+        text-align: center;
     }
 }

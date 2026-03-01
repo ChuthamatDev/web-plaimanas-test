@@ -88,10 +88,10 @@
     color: transparent;
 }
 
-.form-control:focus ~ .floating-label,
-.form-control:not(:placeholder-shown) ~ .floating-label,
-select.form-control:focus ~ .floating-label,
-select.form-control:valid ~ .floating-label {
+.form-control:focus~.floating-label,
+.form-control:not(:placeholder-shown)~.floating-label,
+select.form-control:focus~.floating-label,
+select.form-control:valid~.floating-label {
     top: 0;
     font-size: 10px !important;
     color: rgba(0, 0, 0, 0.4) !important;
@@ -126,7 +126,7 @@ select.form-control:invalid {
         color 0.3s ease;
 }
 
-select.form-control:focus ~ .dropdown-icon {
+select.form-control:focus~.dropdown-icon {
     transform: rotate(180deg);
     color: var(--color-black);
 }
@@ -174,4 +174,40 @@ select.form-control:focus ~ .dropdown-icon {
 
 .btn-submit:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 1024px) {
+    .inquiry-section {
+        padding: clamp(50px, 8vw, 100px) 0;
+    }
+
+    .inquiry-container {
+        padding: 0 5vw;
+    }
+
+    .inquiry-grid {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(40px, 6vw, 80px);
+    }
+
+    .inquiry-title {
+        font-size: clamp(28px, 6vw, 40px);
+        margin-bottom: clamp(16px, 3vw, 24px);
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 4vw, 32px);
+    }
+
+    .inquiry-form {
+        gap: clamp(20px, 4vw, 32px);
+    }
+
+    .btn-submit {
+        width: 40%;
+        text-align: center;
+    }
 }

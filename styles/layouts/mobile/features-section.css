@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .features-section {
-        padding: 100px 0;
+        padding: 100px 10px;
     }
 
     .features-container {
@@ -16,7 +16,7 @@
         display: grid;
         grid-template-columns: repeat(1, 3fr);
         gap: 48px;
-        max-width: 280px;
+        max-width: 100%;
         height: 100%;
     }
 
@@ -37,7 +37,7 @@
         font-weight: 400;
         color: rgba(0, 0, 0, 0.6);
         letter-spacing: 0;
-        line-height: 1.1;
+        line-height: 1.4;
         margin: 0;
     }
 }

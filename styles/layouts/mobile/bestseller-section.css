@@ -1,7 +1,3 @@
 @media (max-width: 768px) {
-    .bestseller-section {
-        position: relative;
-        background-color: var(--color-white);
-        padding: 100px 40px;
-    }
+    /* Rules removed to let fluid components/bestseller-section.css clamps govern the layout */
 }
