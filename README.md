@@ -25,4 +25,4 @@
 ## 🛠️ How to Run (การรันโปรเจกต์)
 1. Clone repository นี้:
    ```bash
-   git clone [https://github.com/ChuthamatDev/web-plaimanas-test.git](https://github.com/ChuthamatDev/web-plaimanas-test.git)
+   git clone https://github.com/ChuthamatDev/web-plaimanas-test.git
