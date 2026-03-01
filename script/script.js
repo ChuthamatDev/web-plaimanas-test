@@ -16,7 +16,17 @@ const initializers = [
 ]
 
 const bootstrapApplication = () => {
-    initializers.forEach((initializeFeature) => initializeFeature())
+    console.time('App Initialized in');
+
+    initializers.forEach((initializeFeature) => {
+        try {
+            initializeFeature();
+        } catch (error) {
+            console.error(`Failed to initialize module: ${initializeFeature.name}`, error);
+        }
+    });
+
+    console.timeEnd('App Initialized in');
 }
 
 if (document.readyState === 'loading') {

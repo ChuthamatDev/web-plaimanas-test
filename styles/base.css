@@ -54,6 +54,7 @@ a {
     text-decoration: none;
     color: inherit;
     transition: var(--transition-smooth);
+    cursor: pointer;
 }
 
 ul {
@@ -65,4 +66,39 @@ video {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+
+button,
+.nav-link,
+.dropdown-item,
+.nav-link-signin,
+.scroll-to-homepage,
+.btn-submit,
+.btn-subscribe,
+.faq-question,
+.faq-tab,
+.radio-label,
+.checkbox-label {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"] {
+    cursor: text;
+}
+
+select {
+    cursor: pointer;
+}
+
+.collection-image,
+.hover-media,
+.hero-video,
+.bestseller-video {
+    cursor: pointer;
+}
+
+.marquee-section {
+    cursor: default;
 }

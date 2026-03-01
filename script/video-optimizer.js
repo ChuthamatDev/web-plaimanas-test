@@ -18,16 +18,14 @@ export const initVideoOptimizer = () => {
     const activateSource = (video) => {
         if (!video.dataset.src) return
 
-        // ย้าย data-src ไปใส่ src โดยตรงเพื่อให้เบราว์เซอร์รับรู้ทันที
-        video.src = video.dataset.src
-        video.load() // บังคับให้เบราว์เซอร์เริ่มโหลดไฟล์สื่อ
+            video.src = video.dataset.src
+            video.load()
         delete video.dataset.src
     }
 
     const playSafely = async (video) => {
         if (!video.paused || prefersReducedMotion) return
 
-        // Make sure it remains muted for autoplay rules
         video.muted = true
         video.setAttribute('playsinline', '')
 
@@ -37,8 +35,6 @@ export const initVideoOptimizer = () => {
                 await playPromise
             }
         } catch (error) {
-            // Silently handle autoplay prevention as it's common browser behavior
-            // We'll retry on interaction via global event listeners if needed
             if (video.autoplay || video.dataset.playOnVisible) {
                 console.debug('[VideoEngine] Autoplay was blocked, waiting for interaction.')
             }
