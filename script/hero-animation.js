@@ -1,17 +1,32 @@
+
 export const initHeroAnimation = () => {
     const logoWrapper = document.getElementById('heroLogoWrapper')
-    if (!logoWrapper) return
+    const heroSection = document.querySelector('.hero-scroll-container')
+    
+    if (!logoWrapper || !heroSection) return
+
+    let ticking = false
 
     const updateLogo = () => {
-        if (window.scrollY > 50) {
+        const scrollY = window.scrollY
+        
+        if (scrollY > 20) {
             logoWrapper.classList.add('is-compact')
-            window.removeEventListener('scroll', updateLogo)
+        } else {
+            logoWrapper.classList.remove('is-compact')
+        }
+
+        ticking = false
+    }
+
+    const onScroll = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateLogo)
+            ticking = true
         }
     }
 
+    window.addEventListener('scroll', onScroll, { passive: true })
+    
     updateLogo()
-
-    if (!logoWrapper.classList.contains('is-compact')) {
-        window.addEventListener('scroll', updateLogo)
-    }
 }

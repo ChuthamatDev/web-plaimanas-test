@@ -32,10 +32,25 @@ export const initLanguageSelector = () => {
         btn.setAttribute('aria-expanded', 'false')
     })
 
-    const dropdown = selector.querySelector('.lang-dropdown')
-    if (dropdown) {
-        dropdown.addEventListener('click', (e) => {
-            e.stopPropagation()
+    const options = selector.querySelectorAll('.lang-option')
+    const langLabel = btn.querySelector('.lang-label')
+
+    if (options.length && langLabel) {
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation()
+
+                // Swap Text between label and option
+                const currentLang = langLabel.textContent.trim()
+                const newLang = option.textContent.trim()
+                
+                langLabel.textContent = newLang
+                option.textContent = currentLang
+
+                // Close the dropdown
+                selector.classList.remove('active')
+                btn.setAttribute('aria-expanded', 'false')
+            })
         })
     }
 }

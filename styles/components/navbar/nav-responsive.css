@@ -4,10 +4,8 @@
 }
 
 @media (max-width: 768px) {
-    .nav-link,
-    .dropdown-item {
-        transition: none !important;
-        will-change: auto !important;
+    .navbar {
+        background-color: var(--color-white);
     }
 
     .nav-link:hover,
@@ -125,6 +123,7 @@
     body.editorial-mode .dark-overlay {
         display: none !important;
     }
+
     body.editorial-mode .navbar {
         background-color: var(--color-white) !important;
     }
@@ -136,7 +135,7 @@
         width: 100%;
     }
 
-    .has-dropdown.mobile-expanded > .nav-link {
+    .has-dropdown.mobile-expanded>.nav-link {
         font-size: 24px !important;
         font-weight: 700 !important;
     }

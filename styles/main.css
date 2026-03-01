@@ -1,7 +1,9 @@
+/* Main Entry Point */
+/* All styles are also linked in index.html for parallel loading performance */
+
 @import './theme.css';
 @import './foundation/breakpoints.css';
 @import './base.css';
-
 @import './utilities/helpers.css';
 
 @import './navbar.css';

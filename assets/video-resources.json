@@ -1,0 +1,7 @@
+{
+    "videos": {
+        "hero": "https://res.cloudinary.com/dymaipqhi/video/upload/v1772296933/hero-bg_w9qq74.mp4",
+        "bestseller": "https://res.cloudinary.com/dymaipqhi/video/upload/v1772296813/bestseller-bg_sgocqj.mov",
+        "collection": "https://res.cloudinary.com/dymaipqhi/video/upload/v1772296627/collection_bbob80.mov"
+    }
+}

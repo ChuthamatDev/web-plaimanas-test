@@ -1,16 +1,20 @@
+:root {
+    --hero-scale-offset: 50px;
+}
+
 .hero-scroll-container {
     position: relative;
-    background-color: var(--color-black);
-    height: calc(200vh - var(--nav-height));
+    background-color: var(--color-black, #000);
+    height: calc(200vh - var(--nav-height, 70px));
 }
 
 .sticky-hero-view {
     position: sticky;
-    top: var(--nav-height);
+    top: var(--nav-height, 70px);
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    background-color: var(--color-black);
+    background-color: var(--color-black, #000);
     overflow: hidden;
 }
 
@@ -31,28 +35,32 @@
 }
 
 .video-overlay {
+    position: absolute;
+    inset: 0;
     background: rgba(0, 0, 0, 0.2);
     z-index: 2;
+    pointer-events: none;
 }
 
 .hero-logo-wrapper {
     position: fixed;
-    top: calc(var(--nav-height) + 20px);
+    top: 70px;
     left: 0;
     width: 100%;
-    z-index: 1600;
+    z-index: 2000;
     pointer-events: none;
     mix-blend-mode: difference;
-    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    text-align: center;
+    will-change: transform;
 }
 
 .hero-logo-inner {
     position: relative;
-    width: min(96vw, 1400px);
+    width: min(100% - (var(--site-padding) * 2), var(--container-max-width));
     margin: 0 auto;
-    transform: scale(1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: top center;
-    transition: transform 600ms linear;
+    will-change: transform;
 }
 
 .hero-logo-wrapper.is-compact .hero-logo-inner {
@@ -68,11 +76,7 @@
 
 .logo-large,
 .logo-small {
-    transition: opacity 600ms linear;
-}
-
-.logo-large {
-    opacity: 1;
+    transition: opacity 0.4s ease-out;
 }
 
 .logo-small {
@@ -91,15 +95,12 @@
 
 @media (max-width: 768px) {
     .hero-logo-wrapper {
-        top: calc(var(--nav-height) + 12px);
-    }
-
-    .hero-logo-inner {
-        width: min(95vw, 900px);
+        top: 15px;
     }
 
     .hero-logo-wrapper.is-compact .hero-logo-inner {
         transform: scale(1) !important;
+        /* Keep large on mobile as per design */
     }
 
     .hero-logo-wrapper.is-compact .logo-large {

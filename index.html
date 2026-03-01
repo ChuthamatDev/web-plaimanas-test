@@ -1,951 +1,669 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Plaimanas</title>
-        <link rel="icon" type="image/svg+xml" href="./images/logo_small.svg" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plaimanas</title>
 
-        <link rel="stylesheet" href="./styles/main.css" />
-    </head>
+    <link rel="icon" type="image/svg+xml" href="./images/logo_small.svg" />
 
-    <body>
-        <div class="dark-overlay" aria-hidden="true"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <header class="site-header">
-            <nav class="navbar" aria-label="Primary Navigation">
-                <div class="nav-container">
-                    <div class="nav-left">
-                        <div class="language-selector" id="languageSelector">
-                            <button
-                                type="button"
-                                class="lang-btn"
-                                aria-haspopup="listbox"
-                                aria-expanded="false"
-                                aria-controls="languageOptions"
-                            >
-                                <span class="lang-label">TH - THB</span>
-                                <svg
-                                    class="arrow-icon"
-                                    viewBox="0 0 7 4"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z"
-                                    />
-                                </svg>
-                            </button>
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="./images/hero-poster.png" as="image" />
 
-                            <div
-                                class="lang-dropdown"
-                                id="languageOptions"
-                                role="listbox"
-                            >
-                                <button
-                                    type="button"
-                                    class="lang-option"
-                                    role="option"
-                                >
-                                    US - USD
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
 
-                    <div class="nav-center">
-                        <button
-                            type="button"
-                            class="mobile-menu-btn"
-                            aria-label="Toggle Mobile Menu"
-                            aria-controls="primaryNavigation"
-                            aria-expanded="false"
-                        >
-                            <img
-                                src="./images/menu_mobile.svg"
-                                alt=""
-                                aria-hidden="true"
-                                class="icon-hamburger"
-                            />
-                            <img
-                                src="./images/close_icon_mobile.svg"
-                                alt=""
-                                aria-hidden="true"
-                                class="icon-close"
-                            />
-                        </button>
+    <!-- Core Styles - Parallel Loading -->
+    <link rel="stylesheet" href="./styles/theme.css" />
+    <link rel="stylesheet" href="./styles/foundation/breakpoints.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/utilities/helpers.css" />
 
-                        <ul class="nav-menu" id="primaryNavigation">
-                            <li><a href="#" class="nav-link">Women</a></li>
-                            <li>
-                                <a href="#" class="nav-link">Collections</a>
-                            </li>
+    <!-- Navbar Sub-components -->
+    <link rel="stylesheet" href="./styles/components/navbar/nav-layout.css" />
+    <link rel="stylesheet" href="./styles/components/navbar/nav-menu.css" />
+    <link rel="stylesheet" href="./styles/components/navbar/nav-language.css" />
+    <link rel="stylesheet" href="./styles/components/navbar/nav-actions.css" />
+    <link rel="stylesheet" href="./styles/components/navbar/menu-dark-overlay.css" />
+    <link rel="stylesheet" href="./styles/components/navbar/nav-responsive.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
 
-                            <li
-                                class="menu-item has-dropdown"
-                                data-menu="editorial"
-                            >
-                                <a
-                                    href="#"
-                                    class="nav-link editorial-toggle"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    aria-controls="editorialDropdown"
-                                >
-                                    EDITORIAL
-                                    <svg
-                                        class="mobile-chevron"
-                                        viewBox="0 0 6 4"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z"
-                                        />
-                                    </svg>
-                                </a>
-                                <div
-                                    class="dropdown-content"
-                                    id="editorialDropdown"
-                                >
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >A.S.C</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >BAZAAR</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >ELLE</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >GQ</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >L'OFFICIEL THAILAND</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >NUMERO</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a href="#" class="dropdown-item"
-                                                >VOGUE</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+    <!-- Main Components -->
+    <link rel="stylesheet" href="./styles/components/hero.css" />
+    <link rel="stylesheet" href="./styles/components/new-collection.css" />
+    <link rel="stylesheet" href="./styles/components/bestseller-section.css" />
+    <link rel="stylesheet" href="./styles/components/collections-section.css" />
+    <link rel="stylesheet" href="./styles/components/faq.css" />
+    <link rel="stylesheet" href="./styles/components/inquiry.css" />
+    <link rel="stylesheet" href="./styles/components/footer.css" />
+    <link rel="stylesheet" href="./styles/components/features.css" />
+    <link rel="stylesheet" href="./styles/components/marquee.css" />
+    <link rel="stylesheet" href="./styles/components/section-content.css" />
 
-                            <li><a href="#" class="nav-link">News</a></li>
-                            <li><a href="#" class="nav-link">Stories</a></li>
-                        </ul>
-                    </div>
+    <!-- Responsive Layouts -->
+    <link rel="stylesheet" href="./styles/layouts/mobile.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/base.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/hero.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/new-collection.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/bestseller-section.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/collections-section.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/features-section.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/faq-section.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/inquiry-section.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/footer.css" />
+    <link rel="stylesheet" href="./styles/layouts/mobile/marquee.css" />
 
-                    <div class="nav-right">
-                        <a href="#" class="nav-link-signin">Sign In</a>
-                    </div>
+    <link rel="stylesheet" href="./styles/layouts/desktop.css" />
+    <link rel="stylesheet" href="./styles/layouts/desktop/hero.css" />
 
-                    <div class="nav-cart">
-                        <div class="cart-icon">
-                            <svg
-                                width="17"
-                                height="17"
-                                viewBox="0 0 17 17"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M11.3333 7.08333V4.25C11.3333 3.49855 11.0348 2.77788 10.5035 2.24653C9.97212 1.71518 9.25145 1.41667 8.5 1.41667C7.74855 1.41667 7.02788 1.71518 6.49653 2.24653C5.96518 2.77788 5.66667 3.49855 5.66667 4.25V7.08333M2.125 4.95833V12.75C2.125 13.5014 2.42351 14.2221 2.95486 14.7535C3.48622 15.2848 4.20689 15.5833 4.95833 15.5833H12.0417C12.7931 15.5833 13.5138 15.2848 14.0451 14.7535C14.5765 14.2221 14.875 13.5014 14.875 12.75V4.95833H2.125Z"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+    <link rel="stylesheet" href="./styles/main.css" />
 
-            <section class="hero-scroll-container" aria-label="Hero">
-                <div class="sticky-hero-view">
-                    <video
-                        autoplay
-                        loop
-                        muted
-                        playsinline
-                        preload="metadata"
-                        class="hero-video"
-                        aria-hidden="true"
-                        poster="./images/hero-poster.png"
-                    >
-                        <source src="./videos/hero-bg.mp4" type="video/mp4" />
-                    </video>
-                    <div class="video-overlay"></div>
-                </div>
-            </section>
-        </header>
+    <script src="./script/smooth-scroll-polyfill.js" defer></script>
+    <script type="module" src="./script/script.js" defer></script>
+</head>
 
-        <main id="mainContent">
-            <section class="new-collection-section">
-                <div class="new-collection-container">
-                    <header class="new-collection-header">
-                        <img
-                            src="./images/new_collection.svg"
-                            alt="New collection visual"
-                            class="new-collection-image"
-                            loading="lazy"
-                        />
+<body>
+    <div class="dark-overlay" aria-hidden="true"></div>
 
-                        <div class="new-collection-title-wrapper">
-                            <h1>NEW</h1>
-                        </div>
-                    </header>
-
-                    <div class="new-collection-description">
-                        <h4>Sed egestas, nibh a condimentum imperdiet</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nam ornare, nisl non rhoncus commodo, turpis
-                            elit ultricies justo, vitae molestie quam justo ut
-                            lacus. Proin vitae
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bestseller-section">
-                <div class="bestseller-container">
-                    <header class="bestseller-header">
-                        <video
-                            loop
-                            muted
-                            playsinline
-                            class="bestseller-video"
-                            poster="./images/bestseller-poster.png"
-                            preload="none"
-                            data-src="./videos/bestseller-bg.mp4"
-                        >
-                        </video>
-
-                        <div class="bestseller-title-wrapper">
-                            <h1>bestseller</h1>
-                        </div>
-                    </header>
-
-                    <div class="bestseller-description">
-                        <h4>Sed egestas, nibh a condimentum imperdiet</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nam ornare, nisl non rhoncus commodo, turpis
-                            elit ultricies justo, vitae molestie quam justo ut
-                            lacus. Proin vitae
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="collections-section" aria-label="Collections">
-                <div class="collections-container">
-                    <div class="collections-grid">
-                        <article class="collection-item-video">
-                            <img
-                                src="./images/collections_01.svg"
-                                alt="Collection 01"
-                                class="collection-image primary-media"
-                                loading="lazy"
-                            />
-
-                            <div class="hover-media">
-                                <video
-                                    loop
-                                    muted
-                                    playsinline
-                                    class="hover-content"
-                                    poster="./images/collection-poster.png"
-                                    preload="none"
-                                    data-src="./videos/collection.mp4"
-                                >
-                                </video>
-                            </div>
-
-                            <h2 class="collection-title">COLLECTION 01</h2>
-                        </article>
-
-                        <article class="collection-item-image">
-                            <img
-                                src="./images/collections_02.svg"
-                                alt="Collection 02"
-                                class="collection-image primary-media"
-                                loading="lazy"
-                            />
-
-                            <div class="hover-media">
-                                <img
-                                    src="./images/person_collections.svg"
-                                    alt="Person"
-                                    class="hover-content"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                            <h2 class="collection-title">COLLECTION 02</h2>
-                        </article>
-
-                        <article class="collection-item-image">
-                            <img
-                                src="./images/collections_03.svg"
-                                alt="Collection 03"
-                                class="collection-image primary-media"
-                                loading="lazy"
-                            />
-
-                            <div class="hover-media">
-                                <img
-                                    src="./images/person_collections.svg"
-                                    alt="Person"
-                                    class="hover-content"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                            <h2 class="collection-title">COLLECTION 03</h2>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="marquee-section" aria-label="Announcements">
-                <div class="marquee-track">
-                    <div class="marquee-content">
-                        <span class="marquee-text">NEW ARRIVAL</span>
-                        <img
-                            src="./images/arrow_left_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                            aria-hidden="true"
-                        />
-                        <span class="marquee-text">BEST SELLING</span>
-                        <img
-                            src="./images/arrow_right_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                            aria-hidden="true"
-                        />
-                    </div>
-
-                    <div class="marquee-content" aria-hidden="true">
-                        <span class="marquee-text">NEW ARRIVAL</span>
-                        <img
-                            src="./images/arrow_left_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                        <span class="marquee-text">BEST SELLING</span>
-                        <img
-                            src="./images/arrow_right_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                    </div>
-
-                    <div class="marquee-content" aria-hidden="true">
-                        <span class="marquee-text">NEW ARRIVAL</span>
-                        <img
-                            src="./images/arrow_left_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                        <span class="marquee-text">BEST SELLING</span>
-                        <img
-                            src="./images/arrow_right_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                    </div>
-
-                    <div class="marquee-content" aria-hidden="true">
-                        <span class="marquee-text">NEW ARRIVAL</span>
-                        <img
-                            src="./images/arrow_left_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                        <span class="marquee-text">BEST SELLING</span>
-                        <img
-                            src="./images/arrow_right_pixel.svg"
-                            alt=""
-                            class="marquee-icon"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section class="features-section" aria-label="Store Features">
-                <div class="features-container">
-                    <div class="features-grid">
-                        <article class="feature-item">
-                            <h3 class="feature-title">WORLDWIDE SHIPPING</h3>
-                            <p class="feature-desc">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nam ornare, nisl non rhoncus
-                                commodo, turpis elit ultricies justo, vitae
-                                molestie quam justo ut lacus. Proin vitae
-                            </p>
-                        </article>
-
-                        <article class="feature-item">
-                            <h3 class="feature-title">CUSTOMER SERVICE</h3>
-                            <p class="feature-desc">
-                                <u>Lorem ipsum dolor sit amet</u>, consectetur
-                                adipiscing elit. Nam ornare, nisl non rhoncus
-                                commodo, turpis elit ultricies justo, vitae
-                                molestie quam justo ut lacus. Proin vitae
-                            </p>
-                        </article>
-
-                        <article class="feature-item">
-                            <h3 class="feature-title">SECURE PAYMENT</h3>
-                            <p class="feature-desc">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nam ornare, nisl non rhoncus
-                                commodo, turpis elit ultricies justo, vitae
-                                molestie quam justo ut lacus. Proin vitae
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="faq-section" aria-labelledby="faq-title">
-                <div class="faq-container">
-                    <header class="faq-header">
-                        <h2 id="faq-title" class="faq-title">
-                            FREQUENTLY ASKED QUESTIONS
-                        </h2>
-                        <p class="faq-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nam ornare, nisl non rhoncus commodo.
-                        </p>
-                    </header>
-
-                    <div class="faq-tabs" role="tablist">
-                        <button
-                            class="faq-tab"
-                            role="tab"
-                            aria-selected="false"
-                            data-target="roders"
-                        >
-                            Orders
-                        </button>
-                        <button
-                            class="faq-tab"
-                            role="tab"
-                            aria-selected="false"
-                            data-target="shipping"
-                        >
-                            shipping
-                        </button>
-                        <button
-                            class="faq-tab active"
-                            role="tab"
-                            aria-selected="ture"
-                            data-target="returns"
-                        >
-                            Returns & Exchanges
-                        </button>
-                        <button
-                            class="faq-tab"
-                            role="tab"
-                            aria-selected="false"
-                            data-target="sizing"
-                        >
-                            Sizing & Products
-                        </button>
-                    </div>
-
-                    <div class="faq-content-wrapper">
-                        <div class="faq-group" id="shipping" role="tabpanel">
-                            <div class="faq-accordion">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="false"
-                                >
-                                    <span
-                                        >Do you offer international
-                                        shipping?</span
-                                    >
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Items can be returned within 14 days
-                                            of receipt, provided they are
-                                            unworn, unwashed, and in original
-                                            condition with tags attached.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="faq-accordion">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="false"
-                                >
-                                    <span>How long dose delivery take?</span>
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Standard shipping takes 3-5 business
-                                            days. Express shipping is available
-                                            at checkout for 1-2 business days
-                                            delivery.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="faq-accordion">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="false"
-                                >
-                                    <span>How can I track my order?</span>
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Once your order is dispatched, you
-                                            will receive an email containing
-                                            your tracking number and a link to
-                                            track your package.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="faq-group active"
-                            id="returns"
-                            role="tabpanel"
-                        >
-                            <div class="faq-accordion is-open">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="true"
-                                >
-                                    <span>What is your return policy?</span>
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer active">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Items can be returned within 14 days
-                                            of receipt, provided they are
-                                            unworn, unwashed, and in original
-                                            condition with tags attached.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="faq-accordion">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="false"
-                                >
-                                    <span
-                                        >Can I exchange for a different
-                                        size?</span
-                                    >
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Standard shipping takes 3-5 business
-                                            days. Express shipping is available
-                                            at checkout for 1-2 business days
-                                            delivery.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="faq-accordion">
-                                <button
-                                    class="faq-question"
-                                    aria-expanded="false"
-                                >
-                                    <span>Are sale items refundable?</span>
-                                    <svg
-                                        class="faq-chevron"
-                                        viewBox="0 0 14 8"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1 1L7 7L13 1"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <p>
-                                            Once your order is dispatched, you
-                                            will receive an email containing
-                                            your tracking number and a link to
-                                            track your package.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="inquiry-section" aria-labelledby="inquiry-title">
-                <div class="inquiry-container">
-                    <div class="inquiry-grid">
-                        <div class="inquiry-content">
-                            <h2 id="inquiry-title" class="inquiry-title">
-                                MAKE AN<br />INQUIRY
-                            </h2>
-                            <p class="inquiry-desc">
-                                Lorem ipsum dolor sit amet, consectetur <br />
-                                adipiscing elit. Nam ornare, nisl non rhoncus
-                                <br />
-                                commodo.
-                            </p>
-                        </div>
-
-                        <div class="inquiry-form-wrapper">
-                            <form class="inquiry-form" action="#" method="POST">
-                                <div class="form-radio-group" role="radiogroup">
-                                    <label class="radio-label">
-                                        <input
-                                            type="radio"
-                                            name="inquiry_type"
-                                            value="onsite"
-                                            checked
-                                        />
-                                        Onsite
-                                    </label>
-                                    <label class="radio-label">
-                                        <input
-                                            type="radio"
-                                            name="inquiry_type"
-                                            value="hybrid"
-                                        />
-                                        Hybrid
-                                    </label>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group floating-group">
-                                        <input
-                                            type="text"
-                                            id="fullName"
-                                            class="form-control"
-                                            placeholder=" "
-                                            required
-                                        />
-                                        <label
-                                            for="fullName"
-                                            class="floating-label"
-                                            >Full name*</label
-                                        >
-                                    </div>
-                                    <div class="form-group floating-group">
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            class="form-control"
-                                            placeholder=" "
-                                            value="Plaimanas@gmail.com"
-                                            required
-                                        />
-                                        <label
-                                            for="email"
-                                            class="floating-label"
-                                            >Email*</label
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group floating-group">
-                                        <input
-                                            type="text"
-                                            id="phone"
-                                            class="form-control"
-                                            placeholder=" "
-                                            required
-                                        />
-                                        <label
-                                            for="phone"
-                                            class="floating-label"
-                                            >Phone Number*</label
-                                        >
-                                    </div>
-
-                                    <div
-                                        class="form-group floating-group select-group"
-                                    >
-                                        <select
-                                            id="subject"
-                                            class="form-control"
-                                            required
-                                        >
-                                            <option
-                                                value=""
-                                                disabled
-                                                selected
-                                                hidden
-                                            ></option>
-                                            <option value="order_status">
-                                                Order Status
-                                            </option>
-                                            <option value="returns">
-                                                Returns & Exchanges
-                                            </option>
-                                            <option value="product_info">
-                                                Product Information
-                                            </option>
-                                            <option value="partnership">
-                                                Partnership & PR
-                                            </option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                        <label
-                                            for="subject"
-                                            class="floating-label"
-                                            >Select Subject*</label
-                                        >
-
-                                        <svg
-                                            class="dropdown-icon"
-                                            viewBox="0 0 14 8"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1 1L7 7L13 1"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="form-checkbox-group">
-                                    <label class="checkbox-label">
-                                        <input
-                                            type="checkbox"
-                                            name="terms"
-                                            required
-                                        />
-                                        I agree to all terms & conditions
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="btn-submit">
-                                    SEND
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
+    <header class="site-header">
         <div class="hero-logo-wrapper" id="heroLogoWrapper">
             <div class="hero-logo-inner">
-                <img
-                    src="./images/logo_hero.svg"
-                    alt="Plaimanas"
-                    class="logo-large"
-                />
-                <img
-                    src="./images/logo_small.svg"
-                    alt="Plaimanas"
-                    class="logo-small"
-                />
+                <img src="./images/logo_hero.svg" alt="Plaimanas" class="logo-large" />
+                <img src="./images/logo_small.svg" alt="Plaimanas" class="logo-small" />
             </div>
         </div>
+        <nav class="navbar" aria-label="Primary Navigation">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="language-selector" id="languageSelector">
+                        <button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false"
+                            aria-controls="languageOptions">
+                            <span class="lang-label">TH - THB</span>
+                            <svg class="arrow-icon" viewBox="0 0 7 4" fill="currentColor">
+                                <path d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z" />
+                            </svg>
+                        </button>
 
-        <div class="footer-top-label">
-            <button class="scroll-to-homepage" id="scrollToHomepageBtn">
-                Homepage
-            </button>
-        </div>
+                        <div class="lang-dropdown" id="languageOptions" role="listbox">
+                            <button type="button" class="lang-option" role="option">
+                                US - USD
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-        <footer class="site-footer" aria-label="Site Footer">
-            <div class="footer-container">
-                <div class="footer-grid">
-                    <nav class="footer-column" aria-label="About Menu">
-                        <h4 class="footer-heading">ABOUT</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Collections</a></li>
-                            <li><a href="#">Editorial</a></li>
-                            <li><a href="#">Stories</a></li>
-                        </ul>
-                    </nav>
+                <div class="nav-center">
+                    <button type="button" class="mobile-menu-btn" aria-label="Toggle Mobile Menu"
+                        aria-controls="primaryNavigation" aria-expanded="false">
+                        <!-- Inline SVGs for Performance -->
+                        <svg class="icon-hamburger" width="20" height="9" viewBox="0 0 20 9" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M0 0.5H20" stroke="currentColor" />
+                            <path d="M0 8.5H20" stroke="currentColor" />
+                        </svg>
+                        <svg class="icon-close" width="21" height="17" viewBox="0 0 21 17" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M0.14917 16.4772L20.1492 0.477241" stroke="currentColor" />
+                            <path d="M0.14917 0.477242L20.1492 16.4772" stroke="currentColor" />
+                        </svg>
+                    </button>
 
-                    <nav class="footer-column" aria-label="Help Menu">
-                        <h4 class="footer-heading">HELP</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Payment Notification</a></li>
-                            <li><a href="#">Customer Service</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </nav>
+                    <ul class="nav-menu" id="primaryNavigation">
+                        <li><a href="#" class="nav-link">Women</a></li>
+                        <li>
+                            <a href="#" class="nav-link">Collections</a>
+                        </li>
 
-                    <nav class="footer-column" aria-label="Social Menu">
-                        <h4 class="footer-heading">SOCIAL</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Facebook</a></li>
-                        </ul>
-                    </nav>
-
-                    <nav class="footer-column" aria-label="Legal Menu">
-                        <h4 class="footer-heading">LEGAL</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookies Policy</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="footer-column newsletter-column">
-                        <h4 class="footer-heading">NEWSLETTER</h4>
-                        <form class="newsletter-form" action="#" method="POST">
-                            <div class="form-group floating-group">
-                                <input
-                                    type="email"
-                                    id="newsletterEmail"
-                                    class="form-control"
-                                    placeholder=" "
-                                    required
-                                />
-                                <label
-                                    for="newsletterEmail"
-                                    class="floating-label"
-                                    >Email</label
-                                >
+                        <li class="menu-item has-dropdown" data-menu="editorial">
+                            <a href="#" class="nav-link editorial-toggle" aria-haspopup="true" aria-expanded="false"
+                                aria-controls="editorialDropdown">
+                                EDITORIAL
+                                <svg class="mobile-chevron" viewBox="0 0 6 4" fill="currentColor">
+                                    <path d="M3.03125 3.75L0.000161171 0H6.06234L3.03125 3.75Z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-content" id="editorialDropdown">
+                                <ul class="dropdown-list">
+                                    <li>
+                                        <a href="#" class="dropdown-item">A.S.C</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">BAZAAR</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">ELLE</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">GQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">L'OFFICIEL THAILAND</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">NUMERO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropdown-item">VOGUE</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <button type="submit" class="btn-subscribe">
-                                SUBSCRIBE
+                        </li>
+
+                        <li><a href="#" class="nav-link">News</a></li>
+                        <li><a href="#" class="nav-link">Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <a href="#" class="nav-link-signin">Sign In</a>
+                </div>
+
+                <div class="nav-cart">
+                    <div class="cart-icon">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.3333 7.08333V4.25C11.3333 3.49855 11.0348 2.77788 10.5035 2.24653C9.97212 1.71518 9.25145 1.41667 8.5 1.41667C7.74855 1.41667 7.02788 1.71518 6.49653 2.24653C5.96518 2.77788 5.66667 3.49855 5.66667 4.25V7.08333M2.125 4.95833V12.75C2.125 13.5014 2.42351 14.2221 2.95486 14.7535C3.48622 15.2848 4.20689 15.5833 4.95833 15.5833H12.0417C12.7931 15.5833 13.5138 15.2848 14.0451 14.7535C14.5765 14.2221 14.875 13.5014 14.875 12.75V4.95833H2.125Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-scroll-container" aria-label="Hero">
+        <div class="sticky-hero-view">
+            <video autoplay loop muted playsinline preload="auto" class="hero-video" aria-hidden="true"
+                poster="./images/hero-poster.png">
+                <source
+                    src="https://res.cloudinary.com/dymaipqhi/video/upload/q_auto,f_auto,w_1280,ac_none/v1772296933/hero-bg_w9qq74.mp4"
+                    type="video/mp4" />
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+    </section>
+
+    <main id="mainContent">
+        <section class="new-collection-section">
+            <div class="new-collection-container">
+                <header class="new-collection-header">
+                    <img src="https://res.cloudinary.com/dymaipqhi/image/upload/v1772339694/new-collection_wytvpu.png"
+                        alt="New collection visual" class="new-collection-image" loading="lazy" />
+
+                    <div class="new-collection-title-wrapper">
+                        <h1>NEW</h1>
+                    </div>
+                </header>
+
+                <div class="new-collection-description">
+                    <h4>Sed egestas, nibh a condimentum imperdiet</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Nam ornare, nisl non rhoncus commodo, turpis
+                        elit ultricies justo, vitae molestie quam justo ut
+                        lacus. Proin vitae
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bestseller-section">
+            <div class="bestseller-container">
+                <header class="bestseller-header">
+                    <video loop muted playsinline class="bestseller-video" poster="./images/bestseller-poster.svg"
+                        preload="none"
+                        data-src="https://res.cloudinary.com/dymaipqhi/video/upload/q_auto,f_auto,w_1280,ac_none/v1772296813/bestseller-bg_sgocqj.mov"></video>
+                    <div class="bestseller-title-wrapper">
+                        <h1>bestseller</h1>
+                    </div>
+                </header>
+
+                <div class="bestseller-description">
+                    <h4>Sed egestas, nibh a condimentum imperdiet</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Nam ornare, nisl non rhoncus commodo, turpis
+                        elit ultricies justo, vitae molestie quam justo ut
+                        lacus. Proin vitae
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="collections-section" aria-label="Collections">
+            <div class="collections-container">
+                <div class="collections-grid">
+                    <article class="collection-item-video fade-up-element">
+                        <img src="./images/collections_01.svg" alt="Collection 01"
+                            class="collection-image primary-media" loading="lazy" />
+
+                        <div class="hover-media">
+                            <video loop muted playsinline class="hover-content" poster="./images/collection-poster.svg"
+                                preload="none"
+                                data-src="https://res.cloudinary.com/dymaipqhi/video/upload/q_auto,f_auto,w_1280,ac_none/v1772296627/collection_bbob80.mov"></video>
+                        </div>
+
+                        <h2 class="collection-title">COLLECTION 01</h2>
+                    </article>
+
+                    <article class="collection-item-image fade-up-element">
+                        <img src="https://res.cloudinary.com/dymaipqhi/image/upload/v1772302195/collectiob-02_x1hcn7.png"
+                            alt="Collection 02" class="collection-image primary-media" loading="lazy" />
+
+                        <div class="hover-media">
+                            <img src="https://res.cloudinary.com/dymaipqhi/image/upload/v1772302188/person-collection_ng8nyn.png"
+                                alt="Person" class="hover-content" loading="lazy" />
+                        </div>
+
+                        <h2 class="collection-title">COLLECTION 02</h2>
+                    </article>
+
+                    <article class="collection-item-image fade-up-element">
+                        <img src="https://res.cloudinary.com/dymaipqhi/image/upload/v1772302183/collection-03_i3b67h.png"
+                            alt="Collection 03" class="collection-image primary-media" loading="lazy" />
+
+                        <div class="hover-media">
+                            <img src="https://res.cloudinary.com/dymaipqhi/image/upload/v1772302188/person-collection_ng8nyn.png"
+                                alt="Person" class="hover-content" loading="lazy" />
+                        </div>
+
+                        <h2 class="collection-title">COLLECTION 03</h2>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="marquee-section" aria-label="Announcements">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-text">NEW ARRIVAL</span>
+                    <img src="./images/arrow_left_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                    <span class="marquee-text">BEST SELLING</span>
+                    <img src="./images/arrow_right_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                </div>
+
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-text">NEW ARRIVAL</span>
+                    <img src="./images/arrow_left_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                    <span class="marquee-text">BEST SELLING</span>
+                    <img src="./images/arrow_right_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                </div>
+
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-text">NEW ARRIVAL</span>
+                    <img src="./images/arrow_left_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                    <span class="marquee-text">BEST SELLING</span>
+                    <img src="./images/arrow_right_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                </div>
+
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-text">NEW ARRIVAL</span>
+                    <img src="./images/arrow_left_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                    <span class="marquee-text">BEST SELLING</span>
+                    <img src="./images/arrow_right_pixel.svg" alt="" class="marquee-icon" aria-hidden="true" />
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section" aria-label="Store Features">
+            <div class="features-container">
+                <div class="features-grid">
+                    <article class="feature-item">
+                        <h3 class="feature-title">WORLDWIDE SHIPPING</h3>
+                        <p class="feature-desc">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Nam ornare, nisl non rhoncus
+                            commodo, turpis elit ultricies justo, vitae
+                            molestie quam justo ut lacus. Proin vitae
+                        </p>
+                    </article>
+
+                    <article class="feature-item">
+                        <h3 class="feature-title">CUSTOMER SERVICE</h3>
+                        <p class="feature-desc">
+                            <u>Lorem ipsum dolor sit amet</u>, consectetur
+                            adipiscing elit. Nam ornare, nisl non rhoncus
+                            commodo, turpis elit ultricies justo, vitae
+                            molestie quam justo ut lacus. Proin vitae
+                        </p>
+                    </article>
+
+                    <article class="feature-item">
+                        <h3 class="feature-title">SECURE PAYMENT</h3>
+                        <p class="feature-desc">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Nam ornare, nisl non rhoncus
+                            commodo, turpis elit ultricies justo, vitae
+                            molestie quam justo ut lacus. Proin vitae
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-title">
+            <div class="faq-container">
+                <header class="faq-header">
+                    <h2 id="faq-title" class="faq-title">
+                        FREQUENTLY ASKED QUESTIONS
+                    </h2>
+                    <p class="faq-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Nam ornare, nisl non rhoncus commodo.
+                    </p>
+                </header>
+
+                <div class="faq-tabs" role="tablist">
+                    <button class="faq-tab" role="tab" aria-selected="false" data-target="roders">
+                        Orders
+                    </button>
+                    <button class="faq-tab" role="tab" aria-selected="false" data-target="shipping">
+                        shipping
+                    </button>
+                    <button class="faq-tab active" role="tab" aria-selected="ture" data-target="returns">
+                        Returns & Exchanges
+                    </button>
+                    <button class="faq-tab" role="tab" aria-selected="false" data-target="sizing">
+                        Sizing & Products
+                    </button>
+                </div>
+
+                <div class="faq-content-wrapper">
+                    <div class="faq-group" id="shipping" role="tabpanel">
+                        <div class="faq-accordion">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Do you offer international
+                                    shipping?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Items can be returned within 14 days
+                                        of receipt, provided they are
+                                        unworn, unwashed, and in original
+                                        condition with tags attached.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How long dose delivery take?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Standard shipping takes 3-5 business
+                                        days. Express shipping is available
+                                        at checkout for 1-2 business days
+                                        delivery.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How can I track my order?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Once your order is dispatched, you
+                                        will receive an email containing
+                                        your tracking number and a link to
+                                        track your package.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-group active" id="returns" role="tabpanel">
+                        <div class="faq-accordion is-open">
+                            <button class="faq-question" aria-expanded="true">
+                                <span>What is your return policy?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer active">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Items can be returned within 14 days
+                                        of receipt, provided they are
+                                        unworn, unwashed, and in original
+                                        condition with tags attached.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Can I exchange for a different
+                                    size?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Standard shipping takes 3-5 business
+                                        days. Express shipping is available
+                                        at checkout for 1-2 business days
+                                        delivery.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Are sale items refundable?</span>
+                                <svg class="faq-chevron" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>
+                                        Once your order is dispatched, you
+                                        will receive an email containing
+                                        your tracking number and a link to
+                                        track your package.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="inquiry-section" aria-labelledby="inquiry-title">
+            <div class="inquiry-container">
+                <div class="inquiry-grid">
+                    <div class="inquiry-content">
+                        <h2 id="inquiry-title" class="inquiry-title">
+                            MAKE AN<br />INQUIRY
+                        </h2>
+                        <p class="inquiry-desc">
+                            Lorem ipsum dolor sit amet, consectetur <br />
+                            adipiscing elit. Nam ornare, nisl non rhoncus
+                            <br />
+                            commodo.
+                        </p>
+                    </div>
+
+                    <div class="inquiry-form-wrapper">
+                        <form class="inquiry-form" action="#" method="POST">
+                            <div class="form-radio-group" role="radiogroup">
+                                <label class="radio-label">
+                                    <input type="radio" name="inquiry_type" value="onsite" checked />
+                                    Onsite
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="inquiry_type" value="hybrid" />
+                                    Hybrid
+                                </label>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group floating-group">
+                                    <input type="text" id="fullName" class="form-control" placeholder=" " required />
+                                    <label for="fullName" class="floating-label">Full name*</label>
+                                </div>
+                                <div class="form-group floating-group">
+                                    <input type="email" id="email" class="form-control" placeholder=" "
+                                        value="Plaimanas@gmail.com" required />
+                                    <label for="email" class="floating-label">Email*</label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group floating-group">
+                                    <input type="text" id="phone" class="form-control" placeholder=" " required />
+                                    <label for="phone" class="floating-label">Phone Number*</label>
+                                </div>
+
+                                <div class="form-group floating-group select-group">
+                                    <select id="subject" class="form-control" required>
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="order_status">
+                                            Order Status
+                                        </option>
+                                        <option value="returns">
+                                            Returns & Exchanges
+                                        </option>
+                                        <option value="product_info">
+                                            Product Information
+                                        </option>
+                                        <option value="partnership">
+                                            Partnership & PR
+                                        </option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <label for="subject" class="floating-label">Select Subject*</label>
+
+                                    <svg class="dropdown-icon" viewBox="0 0 14 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="form-checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" required />
+                                    I agree to all terms & conditions
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                SEND
                             </button>
                         </form>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <div class="footer-bottom">
-                    <span class="copyright">©PLAIMANAS</span>
-                    <span class="credit">Web by ::*</span>
+    <div class="footer-top-label">
+        <button class="scroll-to-homepage" id="scrollToHomepageBtn">
+            Homepage
+        </button>
+    </div>
+
+    <footer class="site-footer" aria-label="Site Footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <nav class="footer-column" aria-label="About Menu">
+                    <h4 class="footer-heading">ABOUT</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Editorial</a></li>
+                        <li><a href="#">Stories</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Help Menu">
+                    <h4 class="footer-heading">HELP</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Payment Notification</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Social Menu">
+                    <h4 class="footer-heading">SOCIAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Legal Menu">
+                    <h4 class="footer-heading">LEGAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-column newsletter-column">
+                    <h4 class="footer-heading">NEWSLETTER</h4>
+                    <form class="newsletter-form" action="#" method="POST">
+                        <div class="form-group floating-group">
+                            <input type="email" id="newsletterEmail" class="form-control" placeholder=" " required />
+                            <label for="newsletterEmail" class="floating-label">Email</label>
+                        </div>
+                        <button type="submit" class="btn-subscribe">
+                            SUBSCRIBE
+                        </button>
+                    </form>
                 </div>
             </div>
-        </footer>
 
-        <script src="./script/smooth-scroll-polyfill.js"></script>
-        <script type="module" src="./script/script.js"></script>
-    </body>
+            <div class="footer-bottom">
+                <span class="copyright">©PLAIMANAS</span>
+                <span class="credit">Web by ::*</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>

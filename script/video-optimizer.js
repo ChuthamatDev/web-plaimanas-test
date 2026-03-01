@@ -16,37 +16,25 @@ export const initVideoOptimizer = () => {
     if (!videos.length) return
 
     const activateSource = (video) => {
-        if (!video.dataset.src || video.src) return
+        if (!video.dataset.src) return
 
-        let source = video.querySelector('source')
-        if (!source) {
-            source = document.createElement('source')
-            source.type = 'video/mp4'
-            video.appendChild(source)
-        }
-        
-        source.src = video.dataset.src
-        video.load()
+        // ย้าย data-src ไปใส่ src โดยตรงเพื่อให้เบราว์เซอร์รับรู้ทันที
+        video.src = video.dataset.src
+        video.load() // บังคับให้เบราว์เซอร์เริ่มโหลดไฟล์สื่อ
         delete video.dataset.src
     }
 
     const playSafely = async (video) => {
         if (!video.paused || prefersReducedMotion) return
 
-        // Final safety check for mobile compatibility
+        // Make sure it remains muted for autoplay rules
         video.muted = true
         video.setAttribute('playsinline', '')
 
         try {
-            // Only play if ready or loading
-            if (video.readyState < 3) {
-                video.load()
-            }
-
             const playPromise = video.play()
             if (playPromise !== undefined) {
                 await playPromise
-                video.style.opacity = '1'
             }
         } catch (error) {
             // Silently handle autoplay prevention as it's common browser behavior
